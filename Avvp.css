@@ -80,19 +80,17 @@
 
         #syllabus {
             position: relative;
-            left: 250px;
+            left: 50%;
+            transform: translateX(-50%);
             text-align: center;
             background: white;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            width: 60%;
-            top: 100px;
-            /* Adjust width as needed */
+            width: 80%;
             max-width: 600px;
-            /* Prevents it from becoming too wide */
-            min-width: 300px;
-            /* Ensures it doesn’t get too small */
+            min-width: 280px;
+            top: 100px;
         }
 
         select {
@@ -111,11 +109,46 @@
             background: #f9f9f9;
             border-radius: 5px;
             min-height: 50px;
-            /* Placeholder height */
             display: flex;
             justify-content: center;
             align-items: center;
             font-size: 16px;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            #syllabus {
+                width: 90%;
+                padding: 15px;
+                top: 80px;
+            }
+
+            select {
+                font-size: 14px;
+                padding: 8px;
+            }
+
+            #syllabus-content {
+                font-size: 14px;
+                padding: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #syllabus {
+                width: 95%;
+                top: 60px;
+            }
+
+            select {
+                font-size: 12px;
+                padding: 6px;
+            }
+
+            #syllabus-content {
+                font-size: 12px;
+                padding: 10px;
+            }
         }
 
         .content {
