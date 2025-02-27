@@ -13,7 +13,7 @@
     <div class="navbar">
         <a href="#" onclick="showContent('faculty-container')">Faculty</a>
         <a href="#" onclick="showContent('program')">Program</a>
-        <a href="#" onclick="showContent('syllabus')">Syllabus</a>
+        <a href="#" onclick="showContent('syllabus')">Curriculum</a>
     </div>
 
     <div id="faculty-container" class="faculty-container">
@@ -119,8 +119,6 @@
     </div>
 
     <div id="syllabus" class="content">
-        <h2>Syllabus Page</h2>
-
         <!-- Course Selection -->
         <select id="course-select" onchange="loadSemesters()">
             <option value="">Select a course</option>
@@ -129,13 +127,26 @@
             <option value="ece">Electronics and Communication Engineering</option>
         </select>
 
-        <!-- Semester Selection (Initially Hidden) -->
         <select id="semester-select" onchange="loadSyllabus()" style="display: none;">
-            <option value="">Select a semester</option>
+            <!-- Semesters will be added dynamically -->
         </select>
 
         <div id="syllabus-content">
-            <!-- Syllabus content will be displayed here -->
+            <table id="syllabus-table" style="display: none;">
+                <thead>
+                    <tr>
+                        <th>Course Code</th>
+                        <th>Course Title</th>
+                        <th>L</th>
+                        <th>T</th>
+                        <th>P</th>
+                        <th>Credits</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Syllabus rows will be dynamically added here -->
+                </tbody>
+            </table>
         </div>
     </div>
 </body>

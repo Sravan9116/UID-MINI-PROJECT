@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syllabus Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        select {
+            padding: 10px;
+            font-size: 16px;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="Avvp">
+        <h2>Select Course & Semester</h2>
+
+        <!-- Course Selection Dropdown -->
+        <select id="courseSelect" onchange="loadSemesters()">
+            <option value="">Select Course</option>
+            <option value="aids">AIDS</option>
+            <option value="cse">CSE</option>
+            <option value="ece">ECE</option>
+        </select>
+
+        <!-- Semester Selection Dropdown -->
+        <select id="semesterSelect" onchange="updateTable()" style="display: none;">
+            <option value="">Select Semester</option>
+        </select>
+
+        <table id="syllabusTable">
+            <thead>
+                <tr>
+                    <th>Course</th>
+                    <th>Title</th>
+                    <th>Credits</th>
+                    <th>Weekly</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <!-- Data will be inserted here dynamically -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function showContent() {
+            document.getElementById("Avvp").style.display = "block";
+        }
+        // Syllabus Data for each Course and Semester
+        const syllabusData = {
+            aids: {
+                sem1: [
+                    { course: "23MAT106", title: "Mathematics for Intelligent Systems 1", credits: 4, weekly: "3-0-2" },
+                    { course: "24AIM101", title: "Computational thinking, programming & problem solving", credits: 3, weekly: "2-0-2" },
+                    { course: "24AIM102", title: "Introduction to cell biology, biochemistry & anatomy", credits: 3, weekly: "2-0-2" },
+                    { course: "24AIM103", title: "Research Methodology and Communication for AIME", credits: 2, weekly: "1-0-2" },
+                    { course: "24EEE101", title: "Foundations in Electrical and Electronic Engg.", credits: 3, weekly: "2-0-2" }
+                ],
+                sem2: [
+                    { course: "24AIM201", title: "Advanced Machine Learning", credits: 4, weekly: "3-0-2" },
+                    { course: "24AIM202", title: "Neural Networks & Deep Learning", credits: 3, weekly: "2-0-2" }
+                ]
+            },
+            cse: {
+                sem1: [
+                    { course: "CSE101", title: "Introduction to Programming", credits: 4, weekly: "3-0-2" },
+                    { course: "CSE102", title: "Data Structures", credits: 3, weekly: "2-0-2" }
+                ],
+                sem2: [
+                    { course: "CSE201", title: "Operating Systems", credits: 4, weekly: "3-0-2" },
+                    { course: "CSE202", title: "Database Management Systems", credits: 3, weekly: "2-0-2" }
+                ]
+            },
+            ece: {
+                sem1: [
+                    { course: "ECE101", title: "Circuit Analysis", credits: 4, weekly: "3-0-2" },
+                    { course: "ECE102", title: "Electronics", credits: 3, weekly: "2-0-2" }
+                ],
+                sem2: [
+                    { course: "ECE201", title: "Signals & Systems", credits: 4, weekly: "3-0-2" },
+                    { course: "ECE202", title: "Analog Circuits", credits: 3, weekly: "2-0-2" }
+                ]
+            }
+        };
+
+        // Load Semesters Based on Course Selection
+        function loadSemesters() {
+            const course = document.getElementById("courseSelect").value;
+            const semesterSelect = document.getElementById("semesterSelect");
+            const tableBody = document.getElementById("tableBody");
+
+            semesterSelect.innerHTML = '<option value="">Select Semester</option>';
+            tableBody.innerHTML = ''; // Clear previous syllabus
+
+            if (course) {
+                const semesters = Object.keys(syllabusData[course]); // Get available semesters
+                semesters.forEach(sem => {
+                    semesterSelect.innerHTML += `<option value="${sem}">${sem.toUpperCase()}</option>`;
+                });
+
+                semesterSelect.style.display = "inline-block"; // Show semester dropdown
+            } else {
+                semesterSelect.style.display = "none"; // Hide if no course is selected
+            }
+        }
+
+        // Update Syllabus Table Based on Selected Course & Semester
+        function updateTable() {
+            const course = document.getElementById("courseSelect").value;
+            const semester = document.getElementById("semesterSelect").value;
+            const tableBody = document.getElementById("tableBody");
+
+            tableBody.innerHTML = ""; // Clear previous data
+
+            if (course && semester && syllabusData[course][semester]) {
+                let totalCredits = 0;
+                let totalHours = 0;
+
+                syllabusData[course][semester].forEach(subject => {
+                    totalCredits += subject.credits;
+                    const weeklyHours = subject.weekly.split('-').reduce((a, b) => a + parseInt(b), 0);
+                    totalHours += weeklyHours;
+
+                    let row = `<tr>
+                        <td>${subject.course}</td>
+                        <td>${subject.title}</td>
+                        <td>${subject.credits}</td>
+                        <td>${subject.weekly}</td>
+                    </tr>`;
+                    tableBody.innerHTML += row;
+                });
+
+                // Add total row
+                let totalRow = `<tr>
+                    <td colspan="2"><b>Total</b></td>
+                    <td><b>${totalCredits}</b></td>
+                    <td><b>${totalHours} hrs.</b></td>
+                </tr>`;
+                tableBody.innerHTML += totalRow;
+            } else {
+                tableBody.innerHTML = '<tr><td colspan="4">No syllabus available for the selected course and semester.</td></tr>';
+            }
+        }
+    </script>
+
+</body>
+
+</html>
