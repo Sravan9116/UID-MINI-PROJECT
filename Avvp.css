@@ -33,6 +33,7 @@
         }
 
         .navbar {
+            font-weight: 600;
             text-align: center;
             justify-content: center;
             display: flex;
@@ -106,7 +107,7 @@
         #syllabus-content {
             margin-top: 20px;
             padding: 15px;
-            background: #f9f9f9;
+            background: #fff;
             border-radius: 5px;
             min-height: 50px;
             display: flex;
@@ -128,7 +129,6 @@
         #syllabus-table td {
             border: 1px solid #ddd;
             padding: 10px;
-            text-align: left;
             border-radius: 2px;
             text-align: center;
         }

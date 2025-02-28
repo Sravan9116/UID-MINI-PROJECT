@@ -130,3 +130,23 @@ footer {
     display: inline-block;
   }
 }
+
+@media (max-width: 425px) {
+  .navbar ul {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: center;
+  }
+
+  .navbar ul li {
+    display: inline-block;
+  }
+}
+
+@media (max-width: 425px) {
+  .logo {
+    top: 5px;
+    right: 15px;
+    width: 10px;
+  }
+}
