@@ -356,7 +356,7 @@
         @media (max-width: 480px) {
             #welcome-section {
                 position: absolute;
-                top: 70%;
+                top: 50%;
                 width: 95%;
                 padding: 15px;
                 max-width: 350px;
