@@ -9,6 +9,7 @@
             gap: 20px;
             justify-content: center;
             padding: 20px;
+            background-color: rgba(40, 40, 40, 0.5);
         }
 
         .faculty-details {
@@ -18,10 +19,12 @@
             border: 1px solid #b10f56;
             box-shadow: #b10f56 0px 0px 10px;
             padding: 15px;
-            width: 250px;
+            width: 240px;
+            height: 300px;
             text-align: center;
             border-radius: 10px;
             background-color: #fff;
+            opacity: 0.5;
         }
 
         .faculty-details img {
@@ -30,6 +33,13 @@
             border-radius: 5px;
             margin-bottom: 10px;
             box-shadow: #333 0px 0px 10px;
+        }
+
+        .faculty-details:hover {
+            transform: scale(1.1);
+            transition: transform 0.5s;
+            opacity: 1;
+
         }
 
         .navbar {
@@ -49,8 +59,9 @@
         }
 
         .navbar a:hover {
-            background-color: #ddd;
-            color: black;
+            background-color: #fff;
+            border-radius: 5px;
+            color: #b10f56;
         }
 
         #program {
@@ -88,7 +99,7 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            width: 90%;
+            width: 100%;
             max-width: 700px;
             min-width: 280px;
             top: 100px;
@@ -191,6 +202,12 @@
                 padding: 6px;
             }
 
+            #syllabus-table th,
+            #syllabus-table td {
+                padding: 5px;
+                font-size: 10px;
+            }
+
             #syllabus-content {
                 font-size: 12px;
                 padding: 10px;
@@ -219,5 +236,39 @@
             .faculty-container {
                 grid-template-columns: repeat(1, 1fr);
                 /* 1 column for small screens */
+            }
+        }
+
+        @media (max-width: 425px) {
+            #syllabus {
+                width: 90%;
+                padding: 15px;
+                top: 50px;
+            }
+
+            select {
+                font-size: 14px;
+                padding: 8px;
+            }
+
+            #syllabus-content {
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            #syllabus-table {
+                font-size: 14px;
+                overflow-x: auto;
+                display: flex;
+            }
+
+            #syllabus-table th,
+            #syllabus-table td {
+                padding: 8px;
+                font-size: 14px;
+            }
+
+            #syllabus-table th {
+                font-size: 12px;
             }
         }

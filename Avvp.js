@@ -118,8 +118,8 @@ const syllabusData = {
             { code: "23CSE212", title: "Principles of Functional Languages", l: 2, t: 0, p: 2, credits: 3, Evaluation: "70:30" },
             { code: "23CSE213", title: "Computer Organization and Architecture", l: 3, t: 1, p: 0, credits: 4, Evaluation: "50:50" },
             { code: "23CSE214", title: "Operating Systems", l: 3, t: 0, p: 2, credits: 4, Evaluation: "70:30" },
-            { code: "Amrita Value Programme II", title: "Amrita Value Programme II", l: 1, t: 0, p: 0, credits: 1 },
-            { code: "Free Elective I**", title: "Free Elective I**", l: 2, t: 0, p: 0, credits: 2 },
+            { code: "Amrita Value Programme II", title: "Amrita Value Programme II", l: 1, t: 0, p: 0, credits: 1,Evaluation: " " },
+            { code: "Free Elective I**", title: "Free Elective I**", l: 2, t: 0, p: 0, credits: 2, Evaluation: " " },
             { code: "23LSE211", title: "Life Skills for Engineers II", l: 1, t: 0, p: 2, credits: 2, Evaluation: "50:50" }
         ],
         sem5: [
@@ -130,7 +130,7 @@ const syllabusData = {
             { code: "23CSE304", title: "Embedded Systems", l: 3, t: 0, p: 2, credits: 4, Evaluation: "70:30" },
             { code: "", title: "Professional Elective II", l: 3, t: 0, p: 0, credits: 3, Evaluation: "70:30" },
             { code: "23LSE301", title: "Life Skills for Engineers III", l: 1, t: 0, p: 2, credits: 2, Evaluation: "50:50" },
-            { code: "23LIV390", title: "Live-in –Labs I***", l: 3, t: 0, p: 0, credits: 3, Evaluation: "" },
+            { code: "23LIV390", title: "Live-in –Labs I***", l: 3, t: 0, p: 0, credits: 3, Evaluation: " " },
             { code: "23ENV300", title: "Environmental Science", l: 0, t: 0, p: 0, credits: 0, Evaluation: "P/F" } 
         ],
 
@@ -142,7 +142,7 @@ const syllabusData = {
             { code: "23CSE314", title: "Compiler Design", l: 3, t: 0, p: 2, credits: 4, Evaluation: "70:30" },
             { code: "23CSE399", title: "Project Phase-I", l: 0, t: 0, p: 6, credits: 3, Evaluation: "70:30" },
             { code: "23LSE311", title: "Life Skills for Engineers IV", l: 1, t: 0, p: 2, credits: 2, Evaluation: "50:50" },
-            { code: "23LIV490", title: "Live-in –Labs II***", l: 3, t: 0, p: 0, credits: 3, Evaluation: "" }
+            { code: "23LIV490", title: "Live-in –Labs II***", l: 3, t: 0, p: 0, credits: 3, Evaluation: " " }
         ],
         sem7: [
             { code: "", title: "Professional Elective IV", l: 3, t: 0, p: 0, credits: 3, Evaluation: "70:30" },
@@ -159,85 +159,102 @@ const syllabusData = {
     },
     ece: {
         sem1: [
-            { code: "ECE101", title: "ECE Subject 1", l: 1, t: 2, p: 1, credits: 3,Evaluation: " " },
-            { code: "ECE102", title: "ECE Subject 2", l: 2, t: 1, p: 2, credits: 4,Evaluation: " " },
-            { code: "ECE103", title: "ECE Subject 3", l: 3, t: 0, p: 0, credits: 3,Evaluation: " " },
-            { code: "ECE104", title: "ECE Subject 4", l: 3, t: 0, p: 0, credits: 3,Evaluation: " " },
-            { code: "ECE105", title: "ECE Subject 5", l: 3, t: 0, p: 0, credits: 3,Evaluation: " " },
-            { code: "ECE106", title: "ECE Subject 6", l: 3, t: 0, p: 0, credits: 3,Evaluation: " " },
-            { code: "ECE107", title: "ECE Subject 7", l: 3, t: 0, p: 0, credits: 3,Evaluation: " " },
-            { code: "ECE108", title: "ECE Subject 8", l: 3, t: 0, p: 0, credits: 3,Evaluation: " " }
+            { code: "23ECE101", title: "Nature Inspired Engineering", l: 3, t: 0, p: 0, credits: 3, Evaluation: " " },
+            { code: "23MAT124", title: "Engineering Mathematics I", l: 3, t: 1, p: 0, credits: 4, Evaluation: " " },
+            { code: "23ECE102", title: "Problem Solving and Algorithmic Thinking", l: 1, t: 0, p: 3, credits: 2, Evaluation: " " },
+            { code: "23ECE103", title: "Fundamentals of Electrical Engineering", l: 3, t: 0, p: 0, credits: 3, Evaluation: " " },
+            { code: "23ECE104", title: "Physics of Semiconductors", l: 3, t: 0, p: 0, credits: 3, Evaluation: " " },
+            { code: "23ECE105", title: "Computer Programming", l: 3, t: 0, p: 0, credits: 3, Evaluation: " " },
+            { code: "23ECE181", title: "Electrical Engineering Laboratory", l: 0, t: 0, p: 3, credits: 1, Evaluation: " " },
+            { code: "23ECE182", title: "Computer Programming Laboratory", l: 0, t: 0, p: 3, credits: 1, Evaluation: " " },
+            { code: "22ADM101", title: "Foundations of Indian Heritage", l: 2, t: 0, p: 1, credits: 2, Evaluation: " " },
+            { code: "22AVP103", title: "Mastery Over Mind (MAOM)", l: 1, t: 0, p: 2, credits: 2, Evaluation: " " }
         ],
         sem2: [
-            { code: "ECE201", title: "ECE Subject 1", l: 1, t: 2, p: 1, credits: 3,Evaluation: " " },
-            { code: "ECE202", title: "ECE Subject 2", l: 2, t: 1, p: 2, credits: 4,Evaluation: " " },
-            { code: "ECE203", title: "ECE Subject 3", l: 3, t: 0, p: 0, credits: 3,Evaluation: " " },
-            { code: "ECE204", title: "ECE Subject 4", l: 3, t: 0, p: 0, credits: 3,Evaluation: " " },
-            { code: "ECE205", title: "ECE Subject 5", l: 3, t: 0, p: 0, credits: 3,Evaluation: " " },
-            { code: "ECE206", title: "ECE Subject 6", l: 3, t: 0, p: 0, credits: 3,Evaluation: " " },
-            { code: "ECE207", title: "ECE Subject 7", l: 3, t: 0, p: 0, credits: 3,Evaluation: " " },
-            { code: "ECE208", title: "ECE Subject 8", l: 3, t: 0, p: 0, credits: 3,Evaluation: " " }
-        ],
+            { code: "23MAT130", title: "Engineering Mathematics II", l: 3, t: 1, p: 0, credits: 4, Evaluation: " " },
+            { code: "23ECE111", title: "Electronic Devices and Circuits", l: 3, t: 0, p: 0, credits: 3, Evaluation: " " },
+            { code: "23ECE112", title: "Signal Processing I", l: 3, t: 0, p: 0, credits: 3, Evaluation: " " },
+            { code: "23MAT132", title: "Transforms", l: 3, t: 0, p: 0, credits: 3, Evaluation: " " },
+            { code: "23ECE113", title: "Signals and Systems", l: 3, t: 0, p: 0, credits: 3, Evaluation: " " },
+            { code: "23ECE114", title: "Network Analysis", l: 3, t: 0, p: 0, credits: 3, Evaluation: " " },
+            { code: "23MAT127", title: "Laplace Transforms", l: 3, t: 0, p: 0, credits: 3, Evaluation: " " },
+            { code: "23ECE115", title: "Circuit Analysis", l: 3, t: 0, p: 0, credits: 3, Evaluation: " " },
+            { code: "23ECE183", title: "Signal Processing-I Laboratory", l: 0, t: 0, p: 3, credits: 1, Evaluation: " " },
+            { code: "23ECE184", title: "Introduction to Internet of Things", l: 0, t: 0, p: 3, credits: 1, Evaluation: " " },
+            { code: "23ECE185", title: "Electronic Devices & Circuits Laboratory", l: 0, t: 0, p: 3, credits: 1, Evaluation: " " },
+            { code: "23ENG101", title: "Technical Communication", l: 2, t: 0, p: 3, credits: 3, Evaluation: " " },
+            { code: "22ADM111", title: "Glimpses of Glorious India", l: 2, t: 0, p: 1, credits: 2, Evaluation: " " }
+            ],
         sem3: [
-            { code: "ECE301", title: "ECE Subject 1", l: 1, t: 2, p: 1, credits: 3,Evaluation: " " },
-            { code: "ECE302", title: "ECE Subject 2", l: 2, t: 1, p: 2, credits: 4,Evaluation: " " },
-            { code: "ECE303", title: "ECE Subject 3", l: 3, t: 0, p: 0, credits: 3,Evaluation: " " },
-            { code: "ECE304", title: "ECE Subject 4", l: 3, t: 0, p: 0, credits: 3,Evaluation: " " },
-            { code: "ECE305", title: "ECE Subject 5", l: 3, t: 0, p: 0, credits: 3,Evaluation: " " },
-            { code: "ECE306", title: "ECE Subject 6", l: 3, t: 0, p: 0, credits: 3,Evaluation: " " },
-            { code: "ECE307", title: "ECE Subject 7", l: 3, t: 0, p: 0, credits: 3,Evaluation: " " },
-            { code: "ECE308", title: "ECE Subject 8", l: 3, t: 0, p: 0, credits: 3,Evaluation: " " }
+            { code: "23ECE201", title: "Digital Electronics", l: 3, t: 0, p: 0, credits: 3, Evaluation: " " },
+            { code: "23ECE202", title: "Analog Electronics I", l: 3, t: 0, p: 0, credits: 3, Evaluation: " " },
+            { code: "23ECE203", title: "Signal Processing II", l: 3, t: 0, p: 0, credits: 3, Evaluation: " " },
+            { code: "23ECE204", title: "Electromagnetic Theory and Waves", l: 3, t: 1, p: 0, credits: 4, Evaluation: " " },
+            { code: "23ECE205", title: "Foundations of Data Science", l: 3, t: 1, p: 0, credits: 4, Evaluation: " " },
+            { code: "23MAT223", title: "Probability and Statistics", l: 3, t: 0, p: 0, credits: 3, Evaluation: " " },
+            { code: "23ECE206", title: "Data Processing", l: 3, t: 0, p: 0, credits: 3, Evaluation: " " },
+            { code: "23ECE281", title: "Digital Electronics Laboratory", l: 0, t: 0, p: 3, credits: 1, Evaluation: " " },
+            { code: "23ECE282", title: "Analog Electronics Laboratory", l: 0, t: 0, p: 3, credits: 1, Evaluation: " " },
+            { code: "23ECE283", title: "Digital Signal Processing Laboratory", l: 0, t: 0, p: 3, credits: 1, Evaluation: " " },
+            { code: "AVP1", title: "Amrita Value Programme-1", l: 1, t: 0, p: 0, credits: 1, Evaluation: " " },
+            { code: "23CHY109", title: "Engineering Chemistry B", l: 2, t: 1, p: 0, credits: 3, Evaluation: " " },
+            { code: "23ENV300", title: "Environmental Science", l: 0, t: 0, p: 0, credits: "P/F", Evaluation: " " },
+            { code: "23LSE201", title: "Life Skills for Engineers I", l: 1, t: 0, p: 2, credits: "P/F", Evaluation: " " }
         ],
         sem4: [
-            { code: "ECE401", title: "ECE Subject 1", l: 1, t: 2, p: 1, credits: 3,Evaluation: " " },
-            { code: "ECE402", title: "ECE Subject 2", l: 2, t: 1, p: 2, credits: 4,Evaluation: " " },
-            { code: "ECE403", title: "ECE Subject 3", l: 3, t: 0, p: 0, credits: 3,Evaluation: " " },
-            { code: "ECE404", title: "ECE Subject 4", l: 3, t: 0, p: 0, credits: 3,Evaluation: " " },
-            { code: "ECE405", title: "ECE Subject 5", l: 3, t: 0, p: 0, credits: 3,Evaluation: " " },
-            { code: "ECE406", title: "ECE Subject 6", l: 3, t: 0, p: 0, credits: 3,Evaluation: " " },
-            { code: "ECE407", title: "ECE Subject 7", l: 3, t: 0, p: 0, credits: 3,Evaluation: " " },
-            { code: "ECE408", title: "ECE Subject 8", l: 3, t: 0, p: 0, credits: 3,Evaluation: " " }
+            { code: "23ECE211", title: "Microcontrollers & Interfacing", l: 3, t: 0, p: 0, credits: 3, Evaluation: " " },
+            { code: "23ECE212", title: "Analog Electronics II", l: 3, t: 0, p: 0, credits: 3, Evaluation: " " },
+            { code: "23ECE213", title: "Communication Theory", l: 3, t: 1, p: 0, credits: 4, Evaluation: " " },
+            { code: "23MAT227", title: "Random Variables and Processes", l: 3, t: 0, p: 0, credits: 3, Evaluation: " " },
+            { code: "23ECE214", title: "Analog Communication", l: 3, t: 0, p: 0, credits: 3, Evaluation: " " },
+            { code: "23ECE215", title: "Control Systems", l: 3, t: 1, p: 0, credits: 4, Evaluation: " " },
+            { code: "23ECE216", title: "Machine Learning", l: 3, t: 0, p: 0, credits: 3, Evaluation: " " },
+            { code: "23MAT218", title: "Optimization Techniques", l: 3, t: 0, p: 0, credits: 3, Evaluation: " " },
+            { code: "23ECE217", title: "Machine Learning Models", l: 3, t: 0, p: 0, credits: 3, Evaluation: " " },
+            { code: "23ECE284", title: "Microcontrollers & Interfacing Laboratory", l: 0, t: 0, p: 3, credits: 1, Evaluation: " " },
+            { code: "23ECE285", title: "Machine Learning Laboratory", l: 0, t: 0, p: 3, credits: 1, Evaluation: " " },
+            { code: "23ECE286", title: "Circuits and Communication Laboratory", l: 0, t: 0, p: 3, credits: 1, Evaluation: " " },
+            { code: "23LSE211", title: "Life Skills for Engineers II", l: 1, t: 0, p: 2, credits: 2, Evaluation: " " },
+            { code: "AVP2", title: "Amrita Value Program 2", l: 1, t: 0, p: 0, credits: 1, Evaluation: " " },
+            { code: "23LAW300", title: "Indian Constitution", l: 0, t: 0, p: 0, credits: "P/F", Evaluation: " " }
         ],
         sem5: [
-            { code: "ECE501", title: "ECE Subject 1", l: 1, t: 2, p: 1, credits: 3,Evaluation: " " },
-            { code: "ECE502", title: "ECE Subject 2", l: 2, t: 1, p: 2, credits: 4,Evaluation: " " },
-            { code: "ECE503", title: "ECE Subject 3", l: 3, t: 0, p: 0, credits: 3,Evaluation: " " },
-            { code: "ECE504", title: "ECE Subject 4", l: 3, t: 0, p: 0, credits: 3,Evaluation: " " },
-            { code: "ECE505", title: "ECE Subject 5", l: 3, t: 0, p: 0, credits: 3,Evaluation: " " },
-            { code: "ECE506", title: "ECE Subject 6", l: 3, t: 0, p: 0, credits: 3,Evaluation: " " },
-            { code: "ECE507", title: "ECE Subject 7", l: 3, t: 0, p: 0, credits: 3,Evaluation: " " },
-            { code: "ECE508", title: "ECE Subject 8", l: 3, t: 0, p: 0, credits: 3,Evaluation: " " }
+            { code: "23ECE301", title: "Computer Systems and Architecture", l: 3, t: 0, p: 0, credits: 3, Evaluation: " " },
+            { code: "23ECE302", title: "VLSI Design", l: 3, t: 0, p: 0, credits: 3, Evaluation: " " },
+            { code: "23ECE303", title: "Radio Frequency and Microwave Engineering", l: 3, t: 0, p: 0, credits: 3, Evaluation: " " },
+            { code: "23ECE304", title: "Digital Communication", l: 3, t: 1, p: 0, credits: 4, Evaluation: " " },
+            { code: "PE1", title: "Professional Elective I", l: 3, t: 0, p: 0, credits: 3, Evaluation: " " },
+            { code: "23ECE381", title: "Open Laboratory I", l: 0, t: 0, p: 3, credits: 1, Evaluation: " " },
+            { code: "23ECE382", title: "Radio Frequency and Microwave Laboratory", l: 0, t: 0, p: 3, credits: 1, Evaluation: " " },
+            { code: "23ECE383", title: "VLSI Design Laboratory", l: 0, t: 0, p: 3, credits: 1, Evaluation: " " },
+            { code: "23ECE384", title: "Communication Systems Laboratory", l: 0, t: 0, p: 3, credits: 1, Evaluation: " " },
+            { code: "23LSE301", title: "Life Skills for Engineers III", l: 1, t: 0, p: 2, credits: 2, Evaluation: " " },
+            { code: "23LIV390", title: "Live-in – Lab I", l: 0, t: 0, p: 0, credits: 3, Evaluation: " " }
         ],
         sem6: [
-            { code: "ECE601", title: "ECE Subject 1", l: 1, t: 2, p: 1, credits: 3,Evaluation: " " },
-            { code: "ECE602", title: "ECE Subject 2", l: 2, t: 1, p: 2, credits: 4,Evaluation: " " },
-            { code: "ECE603", title: "ECE Subject 3", l: 3, t: 0, p: 0, credits: 3,Evaluation: " " },
-            { code: "ECE604", title: "ECE Subject 4", l: 3, t: 0, p: 0, credits: 3,Evaluation: " " },
-            { code: "ECE605", title: "ECE Subject 5", l: 3, t: 0, p: 0, credits: 3,Evaluation: " " },
-            { code: "ECE606", title: "ECE Subject 6", l: 3, t: 0, p: 0, credits: 3,Evaluation: " " },
-            { code: "ECE607", title: "ECE Subject 7", l: 3, t: 0, p: 0, credits: 3,Evaluation: " " },
-            { code: "ECE608", title: "ECE Subject 8", l: 3, t: 0, p: 0, credits: 3,Evaluation: " " }
+            { code: "23ECE311", title: "Wireless Communication & Networks", l: 3, t: 0, p: 0, credits: 3, Evaluation: " " },
+            { code: "23ECE312", title: "Computer Networks and Protocols", l: 3, t: 0, p: 0, credits: 3, Evaluation: " " },
+            { code: "23ECE313", title: "Embedded Systems", l: 3, t: 0, p: 0, credits: 3, Evaluation: " " },
+            { code: "PE2", title: "Professional Elective II", l: 3, t: 0, p: 0, credits: 3, Evaluation: " " },
+            { code: "PE3", title: "Professional Elective III", l: 3, t: 0, p: 0, credits: 3, Evaluation: " " },
+            { code: "23ECE385", title: "Open Laboratory II", l: 0, t: 0, p: 6, credits: 2, Evaluation: " " },
+            { code: "23ECE386", title: "Wireless Communication and Networks Laboratory", l: 0, t: 0, p: 3, credits: 1, Evaluation: " " },
+            { code: "23ECE387", title: "Embedded Systems Laboratory", l: 0, t: 0, p: 3, credits: 1, Evaluation: " " },
+            { code: "23LSE311", title: "Life Skills for Engineers IV", l: 1, t: 0, p: 2, credits: 2, Evaluation: " " },
+            { code: "23LIV490", title: "Live-in – Lab II", l: 0, t: 0, p: 0, credits: 3, Evaluation: " " }
         ],
         sem7: [
-            { code: "ECE701", title: "ECE Subject 1", l: 1, t: 2, p: 1, credits: 3,Evaluation: " " },
-            { code: "ECE702", title: "ECE Subject 2", l: 2, t: 1, p: 2, credits: 4,Evaluation: " " },
-            { code: "ECE703", title: "ECE Subject 3", l: 3, t: 0, p: 0, credits: 3,Evaluation: " " },
-            { code: "ECE704", title: "ECE Subject 4", l: 3, t: 0, p: 0, credits: 3,Evaluation: " " },
-            { code: "ECE705", title: "ECE Subject 5", l: 3, t: 0, p: 0, credits: 3,Evaluation: " " },
-            { code: "ECE706", title: "ECE Subject 6", l: 3, t: 0, p: 0, credits: 3,Evaluation: " " },
-            { code: "ECE707", title: "ECE Subject 7", l: 3, t: 0, p: 0, credits: 3,Evaluation: " " },
-            { code: "ECE708", title: "ECE Subject 8", l: 3, t: 0, p: 0, credits: 3,Evaluation: " " }
+            { code: "PE4", title: "Professional Elective IV", l: 3, t: 0, p: 0, credits: 3, Evaluation: " " },
+            { code: "PE5", title: "Professional Elective V", l: 3, t: 0, p: 0, credits: 3, Evaluation: " " },
+            { code: "PE6", title: "Professional Elective VI", l: 3, t: 0, p: 0, credits: 3, Evaluation: " " },
+            { code: "23ECE498", title: "Project Phase I", l: 0, t: 0, p: 24, credits: 8, Evaluation: " " },
+            { code: "FE", title: "Free Elective", l: 2, t: 0, p: 0, credits: 2, Evaluation: " " },
+            { code: "23ECE497", title: "Technical Writing", l: 0, t: 0, p: 0, credits: "P/F", Evaluation: " " }
         ],
-        sem8: [
-            { code: "ECE801", title: "ECE Subject 1", l: 1, t: 2, p: 1, credits: 3,Evaluation: " " },
-            { code: "ECE802", title: "ECE Subject 2", l: 2, t: 1, p: 2, credits: 4,Evaluation: " " },
-            { code: "ECE803", title: "ECE Subject 3", l: 3, t: 0, p: 0, credits: 3,Evaluation: " " },
-            { code: "ECE804", title: "ECE Subject 4", l: 3, t: 0, p: 0, credits: 3,Evaluation: " "},
-            { code: "ECE805", title: "ECE Subject 5", l: 3, t: 0, p: 0, credits: 3,Evaluation: " " },
-            { code: "ECE806", title: "ECE Subject 6", l: 3, t: 0, p: 0, credits: 3,Evaluation: " " },
-            { code: "ECE807", title: "ECE Subject 7", l: 3, t: 0, p: 0, credits: 3,Evaluation: " " },
-            { code: "ECE808", title: "ECE Subject 8", l: 3, t: 0, p: 0, credits: 3,Evaluation: " " }
+    sem8: [
+            { code: "23ECE499", title: "Project Phase II", l: 0, t: 0, p: 18, credits: 6, Evaluation: " " }
         ]
+
     }
 };
 
@@ -278,13 +295,13 @@ function loadSyllabus() {
         syllabusData[course][semester].forEach(subject => {
             const row = document.createElement("tr");
             row.innerHTML = `
-                <td>${subject.code}</td>
-                <td>${subject.title}</td>
+                <td>${subject.code}</td> <!-- Code -->
+                <td>${subject.title}</td> <!-- Title -->
                 <td>${subject.l}</td>   <!-- Lecture (L) -->
                 <td>${subject.t}</td>   <!-- Tutorial (T) -->
                 <td>${subject.p}</td>   <!-- Practical (P) -->
-                <td>${subject.credits}</td>
-                <td>${subject.Evaluation}</td>
+                <td>${subject.credits}</td> <!-- Credits -->
+                <td>${subject.Evaluation}</td> <!-- Evaluation -->
             `;
             syllabusBody.appendChild(row);
         });
