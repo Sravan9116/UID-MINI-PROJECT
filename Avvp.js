@@ -1,11 +1,19 @@
 function showContent(id) {
-    const contents = document.querySelectorAll('.content, .faculty-container');
-    contents.forEach(function (content) {
-    content.classList.remove('active');
-});
+    // Hide the welcome section
+    document.getElementById("welcome-section").style.display = "none";
 
-document.getElementById(id).classList.add('active');
+    // Select all content sections (including faculty-container)
+    const contents = document.querySelectorAll('.content, .faculty-container');
+
+    // Remove 'active' class from all sections (hiding them)
+    contents.forEach(function (content) {
+        content.classList.remove('active');
+    });
+
+    // Add 'active' class to the selected section (making it visible)
+    document.getElementById(id).classList.add('active');
 }
+
 
 
 const syllabusData = {
