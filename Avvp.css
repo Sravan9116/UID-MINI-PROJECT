@@ -5,7 +5,6 @@
         .faculty-container {
             display: none;
             grid-template-columns: repeat(3, 1fr);
-            /* 3 columns per row */
             gap: 20px;
             justify-content: center;
             padding: 20px;
@@ -43,6 +42,10 @@
         }
 
         .navbar {
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            left: 0;
             top: 0px;
             font-weight: 600;
             text-align: center;
@@ -383,4 +386,222 @@
                 max-width: 300px;
                 margin: 0 auto;
             }
+        }
+
+        /* Main Container for Side-by-Side Layout */
+        .seminar-meeting-container {
+            display: flex;
+            justify-content: space-around;
+            /* Keeps sections side by side */
+            align-items: flex-start;
+            gap: 20px;
+            flex-wrap: wrap;
+            /* Ensures responsiveness */
+            position: absolute;
+            top: 750px;
+            /* Fixed at 1400px from top */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1200px;
+            padding: 20px;
+        }
+
+        /* Common Styling for Both Sections */
+        #seminar-hall,
+        #committee-meetings {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.5s ease-in-out, box-shadow 0.5s;
+            width: 45%;
+            /* Keeps them side by side */
+            max-width: 500px;
+            text-align: center;
+            z-index: 10;
+            color: #b10f56;
+        }
+
+        /* Hover Effects */
+        #seminar-hall:hover,
+        #committee-meetings:hover {
+            transform: scale(1.02);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Seminar & Meeting Intro */
+        .seminar-intro {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Images */
+        .seminar-img {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.5s ease-in-out, box-shadow 0.5s;
+        }
+
+        .seminar-img:hover {
+            transform: scale(1.1) rotate(2deg);
+            box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.7);
+        }
+
+        /* Descriptions */
+        .seminar-intro p {
+            font-size: 18px;
+            max-width: 500px;
+            text-align: left;
+            opacity: 0.8;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .seminar-intro p:hover {
+            opacity: 1;
+        }
+
+        /* Explore More Button */
+        .explore-btn {
+            display: inline-block;
+            padding: 12px 25px;
+            margin-top: 10px;
+            background: white;
+            color: #b10f56;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+            transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        .explore-btn:hover {
+            background: #b10f56;
+            transform: scale(1.1);
+            color: #fff;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .seminar-meeting-container {
+                flex-wrap: nowrap;
+                /* Ensures side-by-side */
+                flex-direction: row;
+                /* Keeps them in a row */
+                overflow-x: auto;
+                /* Enables horizontal scrolling if needed */
+                justify-content: flex-start;
+                /* Aligns content properly */
+            }
+
+            #seminar-hall,
+            #committee-meetings {
+                flex: 0 0 45%;
+                /* Ensures side-by-side */
+                min-width: 300px;
+                /* Prevents shrinking too much */
+            }
+
+            .seminar-img {
+                max-width: 150px;
+            }
+
+            .explore-btn {
+                font-size: 14px;
+                padding: 8px 15px;
+            }
+        }
+
+        /* Seminar Page */
+        .seminar-page {
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Seminar Navigation */
+        .seminar-nav {
+            margin: 20px;
+        }
+
+        .seminar-nav button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            background-color: #b10f56;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .seminar-nav button:hover {
+            background-color: #910c45;
+        }
+
+        /* Seminar Container */
+        .seminar-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* Seminar Image */
+        .seminar-image img {
+            width: 350px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #333;
+        }
+
+        /* Seminar Cards */
+        .seminar-card-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .seminar-card {
+            display: flex;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            align-items: center;
+            transition: transform 0.3s;
+        }
+
+        .seminar-card:hover {
+            transform: scale(1.05);
+        }
+
+        .seminar-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            margin-right: 10px;
+            box-shadow: 0px 0px 5px #333;
+        }
+
+        .seminar-info h3 {
+            margin: 0;
+            color: #b10f56;
+        }
+
+        .seminar-info p {
+            margin: 5px 0;
+            font-size: 14px;
         }

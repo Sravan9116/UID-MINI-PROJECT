@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seminars</title>
+    <link rel="stylesheet" href="Avvp.css">
+</head>
+
+<body>
+
+    <div class="seminar-page">
+        <h1>Seminars</h1>
+
+        <!-- Seminar Navigation -->
+        <div class="seminar-nav">
+            <button onclick="showSeminarSection('upcoming-seminars')">Upcoming Seminars</button>
+            <button onclick="showSeminarSection('past-seminars')">Past Seminars</button>
+        </div>
+
+        <!-- Seminar Content Wrapper -->
+        <div class="seminar-container">
+
+            <!-- Upcoming Seminars -->
+            <div id="upcoming-seminars" class="seminar-section">
+                <h2>Upcoming Seminars</h2>
+                <div id="seminar-list" class="seminar-card-container"></div>
+            </div>
+
+            <!-- Past Seminars -->
+            <div id="past-seminars" class="seminar-section" style="display: none;">
+                <h2>Past Seminars</h2>
+                <div id="past-seminar-list" class="seminar-card-container"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="seminar.js"></script>
+
+</body>
+
+</html>

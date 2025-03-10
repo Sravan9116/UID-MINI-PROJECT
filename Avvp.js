@@ -1,18 +1,113 @@
 function showContent(id) {
-    // Hide the welcome section
+    // Hide the welcome section and other sections
     document.getElementById("welcome-section").style.display = "none";
+    document.getElementById("seminar-hall").style.display = "none";
+    document.getElementById("committee-meetings").style.display = "none";
 
-    // Select all content sections (including faculty-container)
-    const contents = document.querySelectorAll('.content, .faculty-container');
-
-    // Remove 'active' class from all sections (hiding them)
-    contents.forEach(function (content) {
-        content.classList.remove('active');
+    // Hide all sections (including faculty-container, program, syllabus)
+    const sections = document.querySelectorAll('.content, .faculty-container, .seminarcontent, .facultycontent');
+    sections.forEach(section => {
+        section.style.display = "none"; // Hide all sections
     });
 
-    // Add 'active' class to the selected section (making it visible)
-    document.getElementById(id).classList.add('active');
+    // Show the selected section
+    let selectedSection = document.getElementById(id);
+    if (selectedSection) {
+        selectedSection.style.display = "grid";
+    }
 }
+
+// Function to load semesters dynamically
+function loadSemesters() {
+    const course = document.getElementById("course-select").value;
+    const semesterSelect = document.getElementById("semester-select");
+
+    semesterSelect.innerHTML = '<option value="">Select a Semester</option>';
+
+    if (course && syllabusData[course]) {
+        const semesters = Object.keys(syllabusData[course]); // Get available semesters dynamically
+
+        semesters.forEach(sem => {
+            semesterSelect.innerHTML += `<option value="${sem}">${sem.replace("sem", "Semester ")}</option>`;
+        });
+
+        semesterSelect.style.display = "block";
+    } else {
+        semesterSelect.style.display = "none";
+    }
+}
+
+// Function to load syllabus dynamically
+function loadSyllabus() {
+    const course = document.getElementById("course-select").value;
+    const semester = document.getElementById("semester-select").value;
+    const syllabusTable = document.getElementById("syllabus-table");
+    const syllabusBody = syllabusTable.querySelector("tbody");
+
+    syllabusBody.innerHTML = "";
+
+    if (course && semester && syllabusData[course] && syllabusData[course][semester]) {
+        syllabusData[course][semester].forEach(subject => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${subject.code}</td> <!-- Code -->
+                <td>${subject.title}</td> <!-- Title -->
+                <td>${subject.l}</td>   <!-- Lecture (L) -->
+                <td>${subject.t}</td>   <!-- Tutorial (T) -->
+                <td>${subject.p}</td>   <!-- Practical (P) -->
+                <td>${subject.credits}</td> <!-- Credits -->
+                <td>${subject.Evaluation}</td> <!-- Evaluation -->
+            `;
+            syllabusBody.appendChild(row);
+        });
+
+        syllabusTable.style.display = "table";
+    } else {
+        syllabusTable.style.display = "none";
+    }
+}
+
+// Load Seminar Data
+function loadSeminarData() {
+    let seminars = [
+        { title: "AI & Machine Learning Trends", date: "March 15, 2025", speaker: "Mrs.R.P.Sumithra, F.A" },
+        { title: "Quantum Computing Introduction", date: "April 2, 2025", speaker: "Dr.V.Thanammal Indu, A.P" },
+        { title: "Electronic's and Enggineering", date: "April 10, 2025", speaker: "Dr. Shyni P Nair, A.P" }
+    ];
+
+    let seminarList = document.getElementById("seminar-list");
+    seminarList.innerHTML = ""; // Clear existing data
+
+    seminars.forEach(seminar => {
+        let li = document.createElement("li");
+        li.innerHTML = `<strong>${seminar.title}</strong> - ${seminar.date} (Speaker: ${seminar.speaker})`;
+        seminarList.appendChild(li);
+    });
+}
+
+// Load Meeting Data
+function loadMeetingData() {
+    let meetings = [
+        { topic: "Academic Review", date: "March 20, 2025", time: "10:00 AM" },
+        { topic: "Research Proposals", date: "March 25, 2025", time: "2:00 PM" },
+        { topic: "Budget Planning", date: "March 30, 2025", time: "11:30 AM" }
+    ];
+
+    let meetingList = document.getElementById("meetings-list");
+    meetingList.innerHTML = ""; // Clear existing data
+
+    meetings.forEach(meeting => {
+        let li = document.createElement("li");
+        li.innerHTML = `<strong>${meeting.topic}</strong> - ${meeting.date} at ${meeting.time}`;
+        meetingList.appendChild(li);
+    });
+}
+
+// Load seminar and meeting data when the page loads
+document.addEventListener("DOMContentLoaded", function () {
+    loadSeminarData();
+    loadMeetingData();
+});
 
 
 
@@ -265,57 +360,3 @@ const syllabusData = {
 
     }
 };
-
-
-function loadSemesters() {
-    const course = document.getElementById("course-select").value;
-    const semesterSelect = document.getElementById("semester-select");
-
-    semesterSelect.innerHTML = '<option value="">Select a Semester</option>';
-
-    if (course && syllabusData[course]) {
-        const semesters = Object.keys(syllabusData[course]); // Get available semesters dynamically
-
-        semesters.forEach(sem => {
-            semesterSelect.innerHTML += `<option value="${sem}">${sem.replace("sem", "Semester ")}</option>`;
-        });
-
-        semesterSelect.style.display = "block";
-    } else {
-        semesterSelect.style.display = "none";
-    }
-}
-
-
-function loadSyllabus() {
-    const course = document.getElementById("course-select").value;
-    const semester = document.getElementById("semester-select").value;
-    const syllabusTable = document.getElementById("syllabus-table");
-    const syllabusBody = syllabusTable.querySelector("tbody");
-
-    console.log("Selected Course:", course);
-    console.log("Selected Semester:", semester);
-    console.log("Available Data:", syllabusData[course] ? syllabusData[course][semester] : "No data");
-
-    syllabusBody.innerHTML = "";
-
-    if (course && semester && syllabusData[course] && syllabusData[course][semester]) {
-        syllabusData[course][semester].forEach(subject => {
-            const row = document.createElement("tr");
-            row.innerHTML = `
-                <td>${subject.code}</td> <!-- Code -->
-                <td>${subject.title}</td> <!-- Title -->
-                <td>${subject.l}</td>   <!-- Lecture (L) -->
-                <td>${subject.t}</td>   <!-- Tutorial (T) -->
-                <td>${subject.p}</td>   <!-- Practical (P) -->
-                <td>${subject.credits}</td> <!-- Credits -->
-                <td>${subject.Evaluation}</td> <!-- Evaluation -->
-            `;
-            syllabusBody.appendChild(row);
-        });
-
-        syllabusTable.style.display = "table";
-    } else {
-        syllabusTable.style.display = "none";
-    }
-}

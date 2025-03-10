@@ -1,0 +1,56 @@
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styling */
+header {
+    background-color: #b10f56;
+    color: white;
+    padding: 20px;
+    text-shadow: 2px 2px 5px black;
+}
+
+/* Meeting Sections */
+.meeting-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding: 40px;
+}
+
+/* Meeting Section (Upcoming & Past) */
+.meeting-section {
+    width: 40%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.meeting-section:hover {
+    transform: scale(1.05);
+}
+
+/* Meeting Lists */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: #f8f8f8;
+    margin: 10px 0;
+    padding: 10px;
+    border-left: 5px solid #b10f56;
+    transition: background-color 0.3s ease-in-out;
+}
+
+ul li:hover {
+    background-color: #e3e3e3;
+}
