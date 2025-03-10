@@ -497,21 +497,15 @@
         @media (max-width: 768px) {
             .seminar-meeting-container {
                 flex-wrap: nowrap;
-                /* Ensures side-by-side */
                 flex-direction: row;
-                /* Keeps them in a row */
                 overflow-x: auto;
-                /* Enables horizontal scrolling if needed */
                 justify-content: flex-start;
-                /* Aligns content properly */
             }
 
             #seminar-hall,
             #committee-meetings {
                 flex: 0 0 45%;
-                /* Ensures side-by-side */
                 min-width: 300px;
-                /* Prevents shrinking too much */
             }
 
             .seminar-img {
