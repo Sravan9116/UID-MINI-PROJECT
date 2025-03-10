@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Hover Transform</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .car {
+            width: 150px;
+            height: 80px;
+            background: red;
+            position: relative;
+            border-radius: 20px;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .car:hover {
+            transform: translateX(200px);
+            transition: 10s;
+        }
+
+        .wheel {
+            width: 30px;
+            height: 30px;
+            background: black;
+            border-radius: 50%;
+            position: absolute;
+            bottom: -15px;
+        }
+
+        .wheel.left {
+            left: 10px;
+        }
+
+        .wheel.right {
+            right: 10px;
+        }
+
+        video {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            width: 50%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="car">
+        <div class="wheel left"></div>
+        <div class="wheel right"></div>
+    </div>
+    <video controls>
+        <source src="Cutie.mp4" type="video/mp4">
+    </video>
+</body>
+
+</html>

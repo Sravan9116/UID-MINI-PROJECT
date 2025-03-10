@@ -68,6 +68,9 @@
         #program {
             position: relative;
             top: 140px;
+            width: 500px;
+            justify-content: center;
+            left: 28%;
             text-align: center;
             background: #b10f56;
             color: #fff;

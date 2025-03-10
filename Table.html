@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table content</title>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        table {
+            border: 2px solid black;
+            border-radius: 30%;
+            position: absolute;
+            top: 25%;
+            left: 40%;
+            color: white;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            height: 200px;
+            width: 100px;
+        }
+
+        table:hover {
+            transform: translateX(100%) rotate(360deg) scale(1.2);
+            border-radius: 50%;
+            transition: transform 5s, background-color 2s, box-shadow 3s;
+            background-color: none;
+            box-shadow: 10px 10px 5px grey;
+        }
+
+        td {
+            max-width: 200px;
+            border-radius: 50%;
+            border: 2px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+
+        tr {
+            border-radius: 50%;
+            border: 0.5px solid black;
+        }
+
+        .red {
+            position: relative;
+            align-items: center;
+            justify-content: center;
+            top: 20px;
+            left: 35px;
+        }
+
+        .jai {
+            border-radius: 80%;
+            position: absolute;
+            top: 17%;
+            left: 46.5%;
+            height: 100px;
+            width: 100px;
+            transform: translate(-50%, -50%);
+        }
+
+        .jailegs1 {
+            border: none;
+            border-radius: none;
+            position: fixed;
+            top: 75%;
+            left: 43.5%;
+            height: 200px;
+            width: 50px;
+            transform: translate(-0%, -0%);
+        }
+
+        .jailegs2 {
+            border: none;
+            border-radius: none;
+            position: fixed;
+            top: 75%;
+            left: 49.5%;
+            height: 200px;
+            width: 50px;
+            transform: translate(-50%, -50%);
+        }
+
+        .pota {
+            position: relative;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+        }
+
+        .h1 {
+            position: relative;
+            align-items: center;
+            justify-content: center;
+            height: 5px;
+            width: 50px;
+        }
+
+        .jayaa {
+            left: 45%;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+            height: 5px;
+            width: 350px;
+        }
+
+        .jaisaihands {
+            align-items: center;
+            justify-content: center;
+            height: 150px;
+            width: 200px;
+        }
+
+        .w1 {
+            position: absolute;
+            align-items: center;
+            justify-content: center;
+            height: 5px;
+            width: 40px;
+            left: -55px;
+        }
+
+        .w2 {
+            position: absolute;
+            align-items: center;
+            justify-content: center;
+            top: 12px;
+            height: 150px;
+            width: 20px;
+            left: -70px;
+        }
+
+        .jaisaihands1 {
+            align-items: center;
+            justify-content: center;
+            height: 150px;
+            width: 200px;
+        }
+
+        .s1 {
+            position: absolute;
+            align-items: center;
+            justify-content: center;
+            height: 5px;
+            width: 40px;
+            left: 148px;
+        }
+
+        .s2 {
+            position: absolute;
+            align-items: center;
+            justify-content: center;
+            top: 12px;
+            height: 150px;
+            width: 20px;
+            left: 180px;
+        }
+
+        .pen {
+            background-color: burlywood;
+            position: absolute;
+            align-items: center;
+            justify-content: center;
+            top: 70%;
+            left: 45.8%;
+            height: 100px;
+            width: 15px;
+            border-radius: 40%;
+        }
+
+        .pen:hover {
+            transform: translateY(-72%);
+            transition: 3s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="jayaa">
+        <h1>Jai Sai has been Created</h1>
+    </div>
+    <table class="table">
+        <tr>
+            <td colspan="2" rowspan="2" style="background-color: orange;">Orange</td>
+        </tr>
+        <tr>
+            <td style="background-color: Green;" colspan="2">Green</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="pota" style="background-color: Blue;">Blue</td>
+        </tr>
+        <tr>
+            <td style="background-color: red;" colspan="2" class="red">Red</td>
+        </tr>
+        <tr></tr>
+    </table>
+    <table class="jai">
+        <tr>
+            <td style="background-color: orange;" colspan="2"></td>
+        </tr>
+        <table class="jailegs1">
+            <tr class="l1">
+                <td style="background-color: orange;" colspan="2" class="l1"></td>
+            </tr>
+        </table>
+        <table class="jailegs2">
+            <tr class="l2">
+                <td style="background-color: orange;" colspan="2" class="l2"></td>
+            </tr>
+            <table class="jaisaihands">
+                <tr>
+                    <td colspan="2" rowspan="2" style="background-color: orange;" class="w1"></td>
+                </tr>
+                <tr>
+                    <td style="background-color: orange;" colspan="2" class="w2"></td>
+                </tr>
+            </table>
+
+            <table class="jaisaihands1">
+                <tr>
+                    <td colspan="2" rowspan="2" style="background-color: orange;" class="s1"></td>
+                </tr>
+                <tr>
+                    <td style="background-color: orange;" colspan="2" class="s2"></td>
+                </tr>
+            </table>
+            <div class="pen"></div>
+
+            <div>
+                <audio src="Audio.mp3" controls></audio>
+            </div>
+</body>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore the Campus</title>
+    <link rel="stylesheet" href="COMSCI.css">
+</head>
+
+<body>
+
+    <div id="welcome-section">
+        <h1>Welcome to Computer Science Block</h1>
+        <img src="Amma.jpg" alt="Amrita Amma" style="width: 300px; height: auto;">
+        <p>Amma, also known as Mata Amritanandamayi Devi, is a world-renowned spiritual leader and humanitarian.</p>
+    </div>
+
+    <div class="navbar">
+        <a href="Main Page.html">Home</a>
+        <a href="#" onclick="showContent('faculty-container')">Faculty</a>
+        <a href="#" onclick="showContent('program')">Program</a>
+        <a href="#" onclick="showContent('syllabus')">Curriculum</a>
+    </div>
+
+    <div id="faculty-container" class="faculty-container">
+        <!-- Faculty Members -->
+        <div class="faculty-details">
+            <img src="sravan-10 (1)_enhanced.jpg" alt="Faculty 1">
+            <div class="details">
+                <h3>Dr. Sravan</h3>
+                <p>Professor of Computer Science</p>
+                <p>Email: sravan1@example.com</p>
+            </div>
+        </div>
+
+        <div class="faculty-details">
+            <img src="sravan-10 (1)_enhanced.jpg" alt="Faculty 2">
+            <div class="details">
+                <h3>Dr. Sravan</h3>
+                <p>Associate Professor of Mathematics</p>
+                <p>Email: sravan2@example.com</p>
+            </div>
+        </div>
+
+        <div class="faculty-details">
+            <img src="sravan-10 (1)_enhanced.jpg" alt="Faculty 3">
+            <div class="details">
+                <h3>Dr. Sravan</h3>
+                <p>Assistant Professor of Physics</p>
+                <p>Email: sravan3@example.com</p>
+            </div>
+        </div>
+
+        <div class="faculty-details">
+            <img src="sravan-10 (1)_enhanced.jpg" alt="Faculty 4">
+            <div class="details">
+                <h3>Dr. Sravan</h3>
+                <p>Professor of Chemistry</p>
+                <p>Email: sravan4@example.com</p>
+            </div>
+        </div>
+
+        <div class="faculty-details">
+            <img src="sravan-10 (1)_enhanced.jpg" alt="Faculty 5">
+            <div class="details">
+                <h3>Dr. Sravan</h3>
+                <p>Professor of Biology</p>
+                <p>Email: sravan5@example.com</p>
+            </div>
+        </div>
+
+        <div class="faculty-details">
+            <img src="sravan-10 (1)_enhanced.jpg" alt="Faculty 6">
+            <div class="details">
+                <h3>Dr. Sravan</h3>
+                <p>Professor of Economics</p>
+                <p>Email: sravan6@example.com</p>
+            </div>
+        </div>
+
+        <div class="faculty-details">
+            <img src="sravan-10 (1)_enhanced.jpg" alt="Faculty 7">
+            <div class="details">
+                <h3>Dr. Sravan</h3>
+                <p>Professor of Statistics</p>
+                <p>Email: sravan7@example.com</p>
+            </div>
+        </div>
+
+        <div class="faculty-details">
+            <img src="sravan-10 (1)_enhanced.jpg" alt="Faculty 8">
+            <div class="details">
+                <h3>Dr. Sravan</h3>
+                <p>Professor of English</p>
+                <p>Email: sravan8@example.com</p>
+            </div>
+        </div>
+
+        <div class="faculty-details">
+            <img src="sravan-10 (1)_enhanced.jpg" alt="Faculty 9">
+            <div class="details">
+                <h3>Dr. Sravan</h3>
+                <p>Professor of History</p>
+                <p>Email: sravan9@example.com</p>
+            </div>
+        </div>
+
+        <div class="faculty-details">
+            <img src="sravan-10 (1)_enhanced.jpg" alt="Faculty 10">
+            <div class="details">
+                <h3>Dr. Sravan</h3>
+                <p>Professor of Political Science</p>
+                <p>Email: sravan10@example.com</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="program" class="content">
+        <h2>Courses Running in This Block</h2>
+        <ul>
+            <li>B.Tech in Artificial Intelligence and Data Science</li>
+            <li>B.Tech in Computer Science and Engineering</li>
+            <li>B.Tech in Electronics and Communication Engineering</li>
+        </ul>
+    </div>
+
+    <div id="syllabus" class="content">
+        <!-- Course Selection -->
+        <select id="course-select" onchange="loadSemesters()">
+            <option value="">Select a course</option>
+            <option value="aids">Artificial Intelligence and Data Science</option>
+            <option value="cse">Computer Science and Engineering</option>
+            <option value="ece">Electronics and Communication Engineering</option>
+        </select>
+
+        <select id="semester-select" onchange="loadSyllabus()" style="display: none;">
+            <!-- Semesters will be added dynamically -->
+        </select>
+
+        <div id="syllabus-content">
+            <table id="syllabus-table" style="display: none;">
+                <thead>
+                    <tr>
+                        <th>Course Code</th>
+                        <th>Course Title</th>
+                        <th>L</th>
+                        <th>T</th>
+                        <th>P</th>
+                        <th>Credits</th>
+                        <th>Evaluation Pattern</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Syllabus rows will be dynamically added here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+
+<script src="COMSCI.js"></script>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Structure</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: lightblue;
+        }
+
+        .human {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .head {
+            width: 80px;
+            height: 80px;
+            background-color: peachpuff;
+            border-radius: 50%;
+            border: 2px solid black;
+        }
+
+        .body {
+            width: 50px;
+            height: 120px;
+            background-color: blue;
+            border: 2px solid black;
+        }
+
+        .hands {
+            display: flex;
+            justify-content: space-between;
+            width: 150px;
+        }
+
+        .hand {
+            width: 30px;
+            height: 80px;
+            background-color: orange;
+            border: 2px solid black;
+        }
+
+        .legs {
+            display: flex;
+            justify-content: space-between;
+            width: 80px;
+        }
+
+        .leg {
+            width: 30px;
+            height: 100px;
+            background-color: green;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="human">
+        <div class="head"></div>
+        <div class="hands">
+            <div class="hand"></div>
+            <div class="hand"></div>
+        </div>
+        <div class="body"></div>
+        <div class="legs">
+            <div class="leg"></div>
+            <div class="leg"></div>
+        </div>
+    </div>
+</body>
+
+</html>
