@@ -10,22 +10,47 @@
 </head>
 
 <body>
-    <div class="container">
-        <video autoplay loop muted plays-inline class="background-clip">
-            <source src="VIDEO.mp4" type="video/mp4">
-            <track src="subtitles.vtt" kind="subtitles" srclang="en" label="English">
-            <track src="descriptions.vtt" kind="descriptions" srclang="en" label="English Descriptions">
-            Your browser does not support the video tag.
-        </video>
-        <div class="content">
-            <h1>Amrita Vishwa Vidhyapeetham</h1>
-            <h2>Nagercoil Campus</h2>
-            <a href="Main Page.html">Start Journey</a>
-        </div>
-        <div>
-            <img src="Amrita.png" alt="description" class="logo" />
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <div id="content" style="display: none;">
+
+        <div class="container">
+            <video autoplay loop muted plays-inline class="background-clip">
+                <source src="VIDEO.mp4" type="video/mp4">
+                <track src="subtitles.vtt" kind="subtitles" srclang="en" label="English">
+                <track src="descriptions.vtt" kind="descriptions" srclang="en" label="English Descriptions">
+                Your browser does not support the video tag.
+            </video>
+            <div class="content">
+                <h1>Amrita Vishwa Vidhyapeetham</h1>
+                <h2>Nagercoil Campus</h2>
+                <a href="Main Page.html">Start Journey</a>
+            </div>
+            <div>
+                <img src="Amrita.png" alt="description" class="logo" />
+            </div>
         </div>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            window.onload = function () {
+                var preloader = document.getElementById("preloader");
+                var content = document.getElementById("content");
+
+                if (preloader && content) {
+                    preloader.style.opacity = "0";
+                    setTimeout(function () {
+                        preloader.style.display = "none";
+                        content.style.display = "block";
+                    }, 500);
+                }
+            };
+        });
+    </script>
 </body>
 
 </html>

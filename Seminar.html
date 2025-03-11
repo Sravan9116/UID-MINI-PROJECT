@@ -10,32 +10,57 @@
 
 <body>
 
-    <div class="seminar-page">
-        <h1>Seminars</h1>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
 
-        <!-- Seminar Navigation -->
-        <div class="seminar-nav">
-            <button onclick="showSeminarSection('upcoming-seminars')">Upcoming Seminars</button>
-            <button onclick="showSeminarSection('past-seminars')">Past Seminars</button>
-        </div>
+    <div id="content" style="display: none;">
 
-        <!-- Seminar Content Wrapper -->
-        <div class="seminar-container">
+        <div class="seminar-page">
+            <h1>Seminars</h1>
 
-            <!-- Upcoming Seminars -->
-            <div id="upcoming-seminars" class="seminar-section">
-                <h2>Upcoming Seminars</h2>
-                <div id="seminar-list" class="seminar-card-container"></div>
+            <!-- Seminar Navigation -->
+            <div class="seminar-nav">
+                <button onclick="showSeminarSection('upcoming-seminars')">Upcoming Seminars</button>
+                <button onclick="showSeminarSection('past-seminars')">Past Seminars</button>
             </div>
 
-            <!-- Past Seminars -->
-            <div id="past-seminars" class="seminar-section" style="display: none;">
-                <h2>Past Seminars</h2>
-                <div id="past-seminar-list" class="seminar-card-container"></div>
-            </div>
+            <!-- Seminar Content Wrapper -->
+            <div class="seminar-container">
 
+                <!-- Upcoming Seminars -->
+                <div id="upcoming-seminars" class="seminar-section">
+                    <h2>Upcoming Seminars</h2>
+                    <div id="seminar-list" class="seminar-card-container"></div>
+                </div>
+
+                <!-- Past Seminars -->
+                <div id="past-seminars" class="seminar-section" style="display: none;">
+                    <h2>Past Seminars</h2>
+                    <div id="past-seminar-list" class="seminar-card-container"></div>
+                </div>
+
+            </div>
         </div>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            window.onload = function () {
+                var preloader = document.getElementById("preloader");
+                var content = document.getElementById("content");
+
+                if (preloader && content) {
+                    preloader.style.opacity = "0";
+                    setTimeout(function () {
+                        preloader.style.display = "none";
+                        content.style.display = "block";
+                    }, 500);
+                }
+            };
+        });
+    </script>
 
     <script src="seminar.js"></script>
 
