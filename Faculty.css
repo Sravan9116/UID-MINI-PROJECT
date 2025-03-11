@@ -1,21 +1,18 @@
 /* General Page Styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background-color: #f4f4f4;
     text-align: center;
     margin: 0;
     padding: 0;
 }
 
-/* Header Styling */
 header {
     background-color: #b10f56;
     color: white;
     padding: 20px;
-    text-shadow: 2px 2px 5px black;
 }
 
-/* Meeting Sections */
 .meeting-container {
     display: flex;
     justify-content: center;
@@ -23,7 +20,7 @@ header {
     padding: 40px;
 }
 
-/* Meeting Section (Upcoming & Past) */
+
 .meeting-section {
     width: 40%;
     background-color: white;
@@ -37,7 +34,7 @@ header {
     transform: scale(1.05);
 }
 
-/* Meeting Lists */
+
 ul {
     list-style-type: none;
     padding: 0;

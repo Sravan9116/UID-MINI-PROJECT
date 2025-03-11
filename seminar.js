@@ -6,9 +6,10 @@ document.addEventListener("DOMContentLoaded", function () {
 // Function to load upcoming seminars
 function loadUpcomingSeminars() {
     let seminars = [
-        { title: "AI & Machine Learning Trends", date: "March 15, 2025", speaker: "Dr. John Doe", img: "ai.jpg" },
-        { title: "Quantum Computing Introduction", date: "April 2, 2025", speaker: "Dr. Jane Smith", img: "quantum.jpg" },
-        { title: "Blockchain Technology", date: "April 10, 2025", speaker: "Dr. Mark Lee", img: "blockchain.jpg" }
+        { title: "AI & Machine Learning Trends", date: "March 15, 2025", speaker: "Mrs.R.P.Sumithra, F.A", img: "ai.jpeg" },
+        { title: "Quantum Computing Introduction", date: "April 2, 2025", speaker: "Dr.V.Thanammal Indu, A.P", img: "Quantum.jpeg" },
+        { title: "Electronics and Electricals", date: "April 10, 2025", speaker: "Dr.Shyni P Nair,Assisant Professor", img: "block.jpg" },
+        { title: "Cybersecurity Awareness", date: "April 20, 2025", speaker: "Mrs.K.Rejini, F.P", img: "cybersecurity.jpg" },
     ];
 
     let seminarList = document.getElementById("seminar-list");
@@ -31,8 +32,8 @@ function loadUpcomingSeminars() {
 // Function to load past seminars
 function loadPastSeminars() {
     let pastSeminars = [
-        { title: "Cybersecurity Awareness", date: "Jan 10, 2025", speaker: "Dr. Alan Turing", img: "cybersecurity.jpg" },
-        { title: "Data Science Applications", date: "Feb 5, 2025", speaker: "Dr. Ada Lovelace", img: "data-science.jpg" }
+        { title: "Cybersecurity Awareness", date: "Jan 10, 2025", speaker: "Mrs.R.P.Sumithra, F.A", img: "cybersecurity.jpg" },
+        { title: "Data Science Applications", date: "Feb 5, 2025", speaker: "Dr.V.Thanammal Indu, A.P", img: "data.jpg" }
     ];
 
     let pastSeminarList = document.getElementById("past-seminar-list");

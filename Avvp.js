@@ -15,6 +15,14 @@ function showContent(id) {
     if (selectedSection) {
         selectedSection.style.display = "grid";
     }
+
+     // Hide footer when a content section is shown
+    const footer = document.querySelector("footer");
+    footer.style.opacity = "0"; // Fade out
+    footer.style.transform = "translateY(100px)"; // Move it down
+    setTimeout(() => {
+        footer.style.display = "none"; // Hide completely after animation
+    }, 500);
 }
 
 // Function to load semesters dynamically
