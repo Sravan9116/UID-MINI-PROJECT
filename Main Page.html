@@ -22,6 +22,12 @@
             </ul>
         </nav>
     </header>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+
     <section class="hero">
         <img src="Campus.jpg" alt="Campus" class="image">
         <div class="text-content">
@@ -102,5 +108,16 @@
         <p>&copy; 2024 Amrita Vishwa Vidyapeetham. All Rights Reserved.</p>
     </footer>
 </body>
+<script>
+    // Wait until the page is fully loaded
+    window.onload = function () {
+        // Hide Preloader
+        document.getElementById("preloader").style.display = "none";
+
+        // Show the full page content smoothly
+        document.body.style.visibility = "visible";
+        document.body.style.opacity = "1";
+    };
+</script>
 
 </html>
