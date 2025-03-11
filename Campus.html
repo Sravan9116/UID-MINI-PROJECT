@@ -9,73 +9,98 @@
 </head>
 
 <body>
-    <header>
-        <h1>Explore the Campus</h1>
-        <img src="Amrita logo white.webp" alt="Logo" class="logo">
-    </header>
-    <main>
-        <section id="departments">
-            <div class="department">
-                <a href="Avvp block.html">
-                    <img src="DAVP.jpg" alt="Department of AVVP">
-                </a>
-                <div>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <div id="content" style="display: none;">
+        <header>
+            <h1>Explore the Campus</h1>
+            <img src="Amrita logo white.webp" alt="Logo" class="logo">
+        </header>
+        <main>
+            <section id="departments">
+                <div class="department">
                     <a href="Avvp block.html">
-                        <h3>AVVP Block</h3>
+                        <img src="DAVP.jpg" alt="Department of AVVP">
                     </a>
-                    <p>Main Block</p>
+                    <div>
+                        <a href="Avvp block.html">
+                            <h3>AVVP Block</h3>
+                        </a>
+                        <p>Main Block</p>
+                    </div>
                 </div>
-            </div>
-            <div class="department">
-                <a href="COMSCI.html">
-                    <img src="DCSE.jpg" alt="Computer Science">
-                </a>
-                <div>
+                <div class="department">
+                    <a href="COMSCI.html">
+                        <img src="DCSE.jpg" alt="Computer Science">
+                    </a>
+                    <div>
+                        <a href="Main Page.html">
+                            <h3>Computer Science</h3>
+                        </a>
+                        <p>Building A</p>
+                    </div>
+                </div>
+                <div class="department">
                     <a href="Main Page.html">
-                        <h3>Computer Science</h3>
+                        <img src="DEEE.jpg" alt="Electronics and Electrical Engineering">
                     </a>
-                    <p>Building A</p>
+                    <div>
+                        <a href="Main Page.html">
+                            <h3>Electronics and Electrical Engineering</h3>
+                        </a>
+                        <p>Building B</p>
+                    </div>
                 </div>
-            </div>
-            <div class="department">
-                <a href="Main Page.html">
-                    <img src="DEEE.jpg" alt="Electronics and Electrical Engineering">
-                </a>
-                <div>
+                <div class="department">
                     <a href="Main Page.html">
-                        <h3>Electronics and Electrical Engineering</h3>
+                        <img src="DME.jpg" alt="Department of Mechanical Engineering">
                     </a>
-                    <p>Building B</p>
+                    <div>
+                        <a href="Main Page.html">
+                            <h3>Department of Mechanical Engineering</h3>
+                        </a>
+                        <p>Building C</p>
+                    </div>
                 </div>
-            </div>
-            <div class="department">
-                <a href="Main Page.html">
-                    <img src="DME.jpg" alt="Department of Mechanical Engineering">
-                </a>
-                <div>
+                <div class="department">
                     <a href="Main Page.html">
-                        <h3>Department of Mechanical Engineering</h3>
+                        <img src="DPG.jpg" alt="Playgrounds">
                     </a>
-                    <p>Building C</p>
+                    <div>
+                        <a href="Main Page.html">
+                            <h3>Playgrounds</h3>
+                        </a>
+                        <p>Playground Area</p>
+                    </div>
                 </div>
-            </div>
-            <div class="department">
-                <a href="Main Page.html">
-                    <img src="DPG.jpg" alt="Playgrounds">
-                </a>
-                <div>
-                    <a href="Main Page.html">
-                        <h3>Playgrounds</h3>
-                    </a>
-                    <p>Playground Area</p>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 Amrita Vishwa Vidyapeetham | Nagercoil</p>
-    </footer>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2025 Amrita Vishwa Vidyapeetham | Nagercoil</p>
+        </footer>
+    </div>
 </body>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        window.onload = function () {
+            var preloader = document.getElementById("preloader");
+            var content = document.getElementById("content");
+
+            if (preloader && content) {
+                preloader.style.opacity = "0";
+                setTimeout(function () {
+                    preloader.style.display = "none";
+                    content.style.display = "block";
+                }, 500);
+            }
+        };
+    });
+</script>
 
 <script src="Campus.js"></script>
 
