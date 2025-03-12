@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amrita University Clubs</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Lucida Sans', Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        /* Preloader */
+        #preloader {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        /* Rotating Loader Animation */
+        .loader {
+            width: 60px;
+            height: 60px;
+            border: 6px solid #b10f56;
+            border-top: 6px solid transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Header */
+        header {
+            background: #b10f56;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            border-bottom: 3px solid #ff0066;
+        }
+
+        /* Heading */
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+            text-transform: uppercase;
+        }
+
+        /* Navbar */
+        .navbar {
+            margin-top: 10px;
+        }
+
+        .navbar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        /* Navbar Items */
+        .navbar ul li {
+            display: inline;
+        }
+
+        /* Navbar Links */
+        .navbar ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 10px 15px;
+            transition: color 0.3s, background 0.3s;
+        }
+
+        .navbar ul li a:hover {
+            background: #fff;
+            color: #b10f56;
+            border-radius: 5px;
+        }
+
+        /* Main Section */
+        .main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            width: 100%;
+            margin-top: 100px;
+        }
+
+        /* Slider Container */
+        .slider-container {
+            position: relative;
+            width: 80%;
+            height: 400px;
+            max-width: 900px;
+            overflow: hidden;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgb(219, 0, 99);
+        }
+
+        /* Clubs Wrapper */
+        .clubs-wrapper {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 10px;
+            scrollbar-width: none;
+        }
+
+        .clubs-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Club Cards */
+        .club {
+            width: 320px;
+            height: 350px;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            flex: 0 0 auto;
+        }
+
+        .club:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .club img {
+            width: 100%;
+            height: 80%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        /* Club Text */
+        .club h2 {
+            margin: 10px 0;
+            color: #333;
+            font-size: 20px;
+        }
+
+        .club p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* Slider Buttons */
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(179, 5, 60, 0.5);
+            color: white;
+            border: none;
+            padding: 12px;
+            cursor: pointer;
+            font-size: 22px;
+            border-radius: 50%;
+            transition: background 0.3s;
+        }
+
+        .slider-btn:hover {
+            background: #b10f56;
+        }
+
+        .prev {
+            left: 5px;
+        }
+
+        .next {
+            right: 5px;
+        }
+
+        /* 🔹 Responsive Design for Different Devices */
+
+        /* ✅ Tablets & Smaller Devices (Below 768px) */
+        @media (max-width: 768px) {
+            .navbar ul {
+                gap: 20px;
+            }
+
+            .navbar ul li a {
+                font-size: 16px;
+                padding: 8px 12px;
+            }
+
+            .main {
+                height: 85vh;
+                margin-top: 120px;
+            }
+
+            .slider-container {
+                width: 90%;
+                height: 360px;
+            }
+
+            .club {
+                width: 280px;
+                height: 320px;
+            }
+
+            .club img {
+                height: 75%;
+            }
+        }
+
+        /* ✅ Large Mobiles (Below 480px) */
+        @media (max-width: 480px) {
+            .navbar ul {
+                gap: 15px;
+            }
+
+            .navbar ul li a {
+                font-size: 15px;
+                padding: 6px 10px;
+            }
+
+            .slider-container {
+                width: 95%;
+                height: 330px;
+            }
+
+            .club {
+                width: 250px;
+                height: 300px;
+            }
+
+            .club img {
+                height: 70%;
+            }
+
+            .slider-btn {
+                font-size: 18px;
+                padding: 10px;
+            }
+        }
+
+        /* ✅ Standard Mobiles (Below 425px) */
+        @media (max-width: 425px) {
+            .navbar ul {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .navbar ul li a {
+                font-size: 14px;
+                padding: 5px 8px;
+            }
+
+            .slider-container {
+                width: 100%;
+                height: 300px;
+            }
+
+            .club {
+                width: 220px;
+                height: 280px;
+            }
+
+            .club img {
+                height: 65%;
+            }
+        }
+
+        /* ✅ Small Mobiles (Below 375px) */
+        @media (max-width: 375px) {
+            .navbar ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .navbar ul li a {
+                display: block;
+                width: 100%;
+                text-align: center;
+                font-size: 14px;
+                padding: 8px;
+            }
+
+            .slider-container {
+                width: 100%;
+                height: 280px;
+            }
+
+            .club {
+                width: 200px;
+                height: 260px;
+            }
+
+            .club img {
+                height: 60%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+    <div id="content" style="display: none;">
+        <header>
+            <h1>Amrita University Clubs</h1>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="Club.html">Club</a></li>
+                    <li><a href="#">Activities</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="main">
+            <div class="slider-container">
+                <button class="slider-btn prev" onclick="scrollLeft()">&#10094;</button>
+                <div class="clubs-wrapper" id="clubsSlider">
+                    <div class="club">
+                        <img src="nature.jpg" alt="Nature Club">
+                        <h2>Nature Club</h2>
+                        <p>The Nature Club promotes environmental awareness and conservation.</p>
+                    </div>
+                    <div class="club">
+                        <img src="sports.jpg" alt="Sports Club">
+                        <h2>Sports Club</h2>
+                        <p>The Sports Club encourages participation in sports and competitions.</p>
+                    </div>
+                    <div class="club">
+                        <img src="Music.jpg" alt="Music Club">
+                        <h2>Music Club</h2>
+                        <p>The Music Club provides a platform to showcase musical talents.</p>
+                    </div>
+                    <div class="club">
+                        <img src="arts.jpg" alt="Art Club">
+                        <h2>Art Club</h2>
+                        <p>The Art Club fosters creativity through workshops and exhibitions.</p>
+                    </div>
+                    <div class="club">
+                        <img src="litreture.jpg" alt="Literature Club">
+                        <h2>Literature Club</h2>
+                        <p>The Literature Club promotes reading, writing, and discussions.</p>
+                    </div>
+                </div>
+                <button class="slider-btn next" onclick="scrollRight()">&#10095;</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            window.onload = function () {
+                var preloader = document.getElementById("preloader");
+                var content = document.getElementById("content");
+
+                if (preloader && content) {
+                    preloader.style.opacity = "0";
+                    setTimeout(function () {
+                        preloader.style.display = "none";
+                        content.style.display = "block";
+                    }, 500);
+                }
+            };
+        });
+    </script>
+
+    <script>
+        const slider = document.getElementById('clubsSlider');
+
+        function scrollLeft() {
+            slider.scrollBy({ left: -350, behavior: 'smooth' });
+        }
+
+        function scrollRight() {
+            slider.scrollBy({ left: 350, behavior: 'smooth' });
+        }
+    </script>
+
+</body>
+
+</html>
