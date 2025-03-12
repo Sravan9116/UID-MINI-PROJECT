@@ -387,19 +387,21 @@
                     }, 500);
                 }
             };
+
+            const slider = document.getElementById('clubsSlider');
+
+            window.scrollLeft = function () {
+                if (slider) {
+                    slider.scrollBy({ left: -350, behavior: 'smooth' });
+                }
+            };
+
+            window.scrollRight = function () {
+                if (slider) {
+                    slider.scrollBy({ left: 350, behavior: 'smooth' });
+                }
+            };
         });
-    </script>
-
-    <script>
-        const slider = document.getElementById('clubsSlider');
-
-        function scrollLeft() {
-            slider.scrollBy({ left: -350, behavior: 'smooth' });
-        }
-
-        function scrollRight() {
-            slider.scrollBy({ left: 350, behavior: 'smooth' });
-        }
     </script>
 
 </body>
