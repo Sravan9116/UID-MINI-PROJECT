@@ -1,11 +1,12 @@
 function showContent(id) {
-    // Hide the welcome section and other sections
+    // Hide the welcome section and all other sections
     document.getElementById("welcome-section").style.display = "none";
     document.getElementById("seminar-hall").style.display = "none";
     document.getElementById("committee-meetings").style.display = "none";
+    document.getElementById("Club-Activity").style.display = "none"; // Hide Club Activities section
 
-    // Hide all sections (including faculty-container, program, syllabus)
-    const sections = document.querySelectorAll('.content, .faculty-container, .seminarcontent, .facultycontent');
+    // Select and hide all relevant content sections
+    const sections = document.querySelectorAll('.content, .faculty-container, .seminarcontent, .facultycontent, .clubcontent');
     sections.forEach(section => {
         section.style.display = "none"; // Hide all sections
     });
@@ -16,14 +17,23 @@ function showContent(id) {
         selectedSection.style.display = "grid";
     }
 
-     // Hide footer when a content section is shown
+    // Handle Footer Visibility
     const footer = document.querySelector("footer");
-    footer.style.opacity = "0"; // Fade out
-    footer.style.transform = "translateY(100px)"; // Move it down
-    setTimeout(() => {
-        footer.style.display = "none"; // Hide completely after animation
-    }, 500);
+    if (id === "welcome-section") {
+        footer.style.display = "block";  // Restore footer when going back to welcome section
+        setTimeout(() => {
+            footer.style.opacity = "1";
+            footer.style.transform = "translateY(0)";
+        }, 100);
+    } else {
+        footer.style.opacity = "0"; // Fade out
+        footer.style.transform = "translateY(100px)"; // Move it down
+        setTimeout(() => {
+            footer.style.display = "none"; // Hide completely after animation
+        }, 500);
+    }
 }
+
 
 // Function to load semesters dynamically
 function loadSemesters() {

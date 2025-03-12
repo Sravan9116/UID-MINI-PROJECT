@@ -450,7 +450,8 @@
 
         /* Common Styling for Both Sections */
         #seminar-hall,
-        #committee-meetings {
+        #committee-meetings,
+        #Club-Activity {
             background-color: #fff;
             padding: 20px;
             border-radius: 10px;
@@ -470,7 +471,8 @@
 
         /* Hover Effects */
         #seminar-hall:hover,
-        #committee-meetings:hover {
+        #committee-meetings:hover,
+        #Club-Activity:hover {
             transform: scale(1.02);
             box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
         }
@@ -544,7 +546,8 @@
             }
 
             #seminar-hall,
-            #committee-meetings {
+            #committee-meetings,
+            #Club-Activity {
                 flex: 0 0 45%;
                 min-width: 300px;
             }
@@ -643,7 +646,7 @@
 
         footer {
             position: absolute;
-            top: 1350px;
+            top: 1850px;
             width: 100%;
             background-color: #b10f56;
             color: white;
