@@ -240,6 +240,12 @@
         }
 
         @media (max-width: 480px) {
+            #program {
+                margin-top: 20%;
+                width: 70%;
+                left: 15%;
+            }
+
             #syllabus {
                 width: 95%;
                 top: 60px;
