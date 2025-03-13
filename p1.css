@@ -4,7 +4,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Open Sans Regular;
 }
 
 
@@ -59,9 +58,10 @@ button {
     padding: 15px;
     font-size: 27px;
     font-weight: 500;
-    letter-spacing: 5px;
-    background-color: transparent;
-    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    letter-spacing: 2px;
+    background-color: #fff;
+    color: #b10f56;
     border: 2px solid #fff;
     border-radius: 10px;
     transition: background-color 1.5s, color 0.4s, box-shadow 1.5s;
@@ -69,7 +69,7 @@ button {
 }
 
 button:hover {
-    background-color: #b10f56;
+    background-color: #b10038;
     color: #fff;
     box-shadow: 0 0 10px #b10f56,
         0 0 20px #b10f56,
@@ -80,27 +80,27 @@ button:hover {
 
 @keyframes glow {
     10% {
-        border: 2px solid yellow;
+        border: 2px solid red;
     }
 
     20% {
-        border: 2px solid blue;
+        border: 2px solid #b10f56;
     }
 
     30% {
-        border: 2px solid green;
+        border: 2px solid rgb(123, 0, 53);
     }
 
     40% {
-        border: 2px solid orange;
+        border: 2px solid rgb(255, 0, 98);
     }
 
     50% {
-        border: 2px solid white;
+        border: 2px solid orangered;
     }
 
     60% {
-        border: 2px solid palegoldenrod;
+        border: 2px solid rgb(245, 20, 0);
     }
 
     70% {
@@ -108,7 +108,7 @@ button:hover {
     }
 
     80% {
-        border: 2px solid pink;
+        border: 2px solid rgb(202, 0, 54);
     }
 
     100% {
