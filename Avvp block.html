@@ -131,84 +131,85 @@
                 <li>B.Tech in Electronics and Communication Engineering</li>
             </ul>
         </div>
+    </div>
 
-        <div id="syllabus" class="content">
-            <!-- Course Selection -->
-            <select id="course-select" onchange="loadSemesters()">
-                <option value="">Select a course</option>
-                <option value="aids">Artificial Intelligence and Data Science</option>
-                <option value="cse">Computer Science and Engineering</option>
-                <option value="ece">Electronics and Communication Engineering</option>
-            </select>
+    <div id="syllabus" class="content">
+        <!-- Course Selection -->
+        <select id="course-select" onchange="loadSemesters()">
+            <option value="">Select a course</option>
+            <option value="aids">Artificial Intelligence and Data Science</option>
+            <option value="cse">Computer Science and Engineering</option>
+            <option value="ece">Electronics and Communication Engineering</option>
+        </select>
 
-            <select id="semester-select" onchange="loadSyllabus()" style="display: none;">
-                <!-- Semesters will be added dynamically -->
-            </select>
+        <select id="semester-select" onchange="loadSyllabus()" style="display: none;">
+            <!-- Semesters will be added dynamically -->
+        </select>
 
-            <div id="syllabus-content">
-                <table id="syllabus-table" style="display: none;">
-                    <thead>
-                        <tr>
-                            <th>Course Code</th>
-                            <th>Course Title</th>
-                            <th>L</th>
-                            <th>T</th>
-                            <th>P</th>
-                            <th>Credits</th>
-                            <th>Evaluation Pattern</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Syllabus rows will be dynamically added here -->
-                    </tbody>
-                </table>
+        <div id="syllabus-content">
+            <table id="syllabus-table" style="display: none;">
+                <thead>
+                    <tr>
+                        <th>Course Code</th>
+                        <th>Course Title</th>
+                        <th>L</th>
+                        <th>T</th>
+                        <th>P</th>
+                        <th>Credits</th>
+                        <th>Evaluation Pattern</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Syllabus rows will be dynamically added here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="seminar-meeting-container">
+        <!-- Seminar Hall Section -->
+        <div id="seminar-hall" class="seminarcontent">
+            <h2>Seminar Hall</h2>
+            <div class="seminar-intro">
+                <img src="Seminar.jpg" alt="Seminar" class="seminar-img">
+                <p>Explore our past and upcoming seminars covering cutting-edge topics in AI, Quantum Computing, and
+                    more.
+                </p>
+                <a href="Seminar.html" class="explore-btn">Explore More →</a>
             </div>
         </div>
 
-        <div class="seminar-meeting-container">
-            <!-- Seminar Hall Section -->
-            <div id="seminar-hall" class="seminarcontent">
-                <h2>Seminar Hall</h2>
-                <div class="seminar-intro">
-                    <img src="Seminar.jpg" alt="Seminar" class="seminar-img">
-                    <p>Explore our past and upcoming seminars covering cutting-edge topics in AI, Quantum Computing, and
-                        more.
-                    </p>
-                    <a href="Seminar.html" class="explore-btn">Explore More →</a>
-                </div>
-            </div>
-
-            <!-- Faculty Committee Meetings Section -->
-            <div id="committee-meetings" class="facultycontent">
-                <h2>Faculty Committee Meetings</h2>
-                <div class="seminar-intro">
-                    <img src="Seminar1.jpg" alt="Faculty Meeting" class="seminar-img">
-                    <p>Discover past and upcoming faculty committee meetings.</p>
-                    <a href="Faculty.html" class="explore-btn">Explore More →</a>
-                </div>
-            </div>
-
-            <!-- Club Activities Section -->
-            <div id="Club-Activity" class="clubcontent">
-                <h2>Club Activities</h2>
-                <div class="club-intro">
-                    <img src="nature.jpg" alt="Club Activities" class="seminar-img">
-                    <p>Our campus hosts a variety of clubs that cater to diverse interests. From the Robotics Club,
-                        which delves
-                        into the world of automation and AI, to the Literary Club, which fosters a love for literature
-                        and
-                        creative writing, there's something for everyone. Join us to explore your passions and develop
-                        new
-                        skills!</p>
-                    <a href="Club.html" class="explore-btn">Explore More →</a>
-                </div>
+        <!-- Faculty Committee Meetings Section -->
+        <div id="committee-meetings" class="facultycontent">
+            <h2>Faculty Committee Meetings</h2>
+            <div class="seminar-intro">
+                <img src="Seminar1.jpg" alt="Faculty Meeting" class="seminar-img">
+                <p>Discover past and upcoming faculty committee meetings.</p>
+                <a href="Faculty.html" class="explore-btn">Explore More →</a>
             </div>
         </div>
 
+        <!-- Club Activities Section -->
+        <div id="Club-Activity" class="clubcontent">
+            <h2>Club Activities</h2>
+            <div class="club-intro">
+                <img src="nature.jpg" alt="Club Activities" class="seminar-img">
+                <p>Our campus hosts a variety of clubs that cater to diverse interests. From the Robotics Club,
+                    which delves
+                    into the world of automation and AI, to the Literary Club, which fosters a love for literature
+                    and
+                    creative writing, there's something for everyone. Join us to explore your passions and develop
+                    new
+                    skills!</p>
+                <a href="Club.html" class="explore-btn">Explore More →</a>
+            </div>
+        </div>
+    </div>
 
-        <footer>
-            <p>&copy; 2024 Amrita Vishwa Vidyapeetham. All Rights Reserved.</p>
-        </footer>
+
+    <footer>
+        <p>&copy; 2024 Amrita Vishwa Vidyapeetham. All Rights Reserved.</p>
+    </footer>
     </div>
 
     <script>
