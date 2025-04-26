@@ -23,18 +23,111 @@
     text-align: center;
 }
 
-.content h1 {
-    font-size: 50px;
-    color: rgb(164, 18, 63);
-    margin-bottom: 50px;
-}
-
+/* Content Headings */
+.content h1,
 .content h2 {
-    font-size: 40px;
-    color: rgb(164, 18, 63);
-    margin-bottom: 50px;
+    font-size: 50px;
+    color: #fff;
+    margin-bottom: 30px;
+    position: relative;
+    padding: 20px 40px;
+    overflow: hidden;
 }
 
+/* Border pseudo-elements */
+.content h1::before,
+.content h1::after,
+.content h2::before,
+.content h2::after {
+    content: '';
+    position: absolute;
+    background-color: #b10038;
+    transition: all 0.5s ease;
+}
+
+/* Top and Bottom borders */
+.content h1::before,
+.content h2::before {
+    height: 3px;
+    width: 0;
+    top: 0;
+    left: 0;
+    animation: drawTop 1s forwards;
+}
+
+.content h1::after,
+.content h2::after {
+    height: 3px;
+    width: 0;
+    bottom: 0;
+    right: 0;
+    animation: drawBottom 1s forwards;
+    animation-delay: 1s;
+}
+
+/* Left and Right span elements */
+.content h1 span.left,
+.content h2 span.left,
+.content h1 span.right,
+.content h2 span.right {
+    position: absolute;
+    background-color: #b10038;
+    width: 5px;
+    height: 0;
+}
+
+.content h1 span.left,
+.content h2 span.left {
+    top: 0;
+    left: 0;
+    animation: drawLeft 1s forwards;
+    animation-delay: 2s;
+}
+
+.content h1 span.right,
+.content h2 span.right {
+    bottom: 0;
+    right: 0;
+    animation: drawRight 1s forwards;
+    animation-delay: 3s;
+}
+
+/* Hide top, bottom, and right after full animation */
+.content h1.animated::after,
+.content h1::before,
+.content h2.animated::after,
+.content h2::before,
+.content h1 span.right,
+.content h2 span.right {
+    animation: none;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+/* Keyframes for animation */
+@keyframes drawTop {
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes drawBottom {
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes drawLeft {
+    to {
+        height: 100%;
+    }
+}
+
+@keyframes drawRight {
+    to {
+        height: 100%;
+    }
+}
 
 .background-clip {
     position: fixed;
