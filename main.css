@@ -166,7 +166,10 @@ header {
   max-width: 500px;
   height: auto;
   border-radius: 10px;
+  transition: background-color 1.5s, color 0.4s, box-shadow 1.5s;
 }
+
+
 
 .text-content {
   max-width: 500px;
@@ -177,9 +180,7 @@ header {
   border-radius: 10px;
 }
 
-.text-content:hover {
-  transform: scale(1.05);
-}
+
 
 .text-content a {
   color: white;
@@ -188,6 +189,7 @@ header {
 
 .text-content a:hover {
   color: aliceblue;
+  transition: transform 0.5s ease-in-out;
 }
 
 .under {

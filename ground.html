@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amrita University Playground</title>
+    <style>
+        body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #f4f4f4;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            text-align: center;
+            color: #b10f56;
+        }
+
+        .sports-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .sport-card {
+            flex: 1 1 calc(33.333% - 20px);
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .sport-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .sport-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .sport-card .content {
+            padding: 15px;
+        }
+
+        .sport-card .content h3 {
+            margin: 0 0 10px;
+            color: #333;
+        }
+
+        .sport-card .content p {
+            margin: 0;
+            color: #666;
+        }
+
+        .sport-card .content button {
+            margin-top: 10px;
+            padding: 10px 15px;
+            background: #b10f56;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .sport-card .content button:hover {
+            background: #6e0032;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Amrita University Playground</h1>
+    <div class="container">
+        <div class="header">
+            <p>Discover the sports facilities and activities at Amrita University!</p>
+        </div>
+        <div class="sports-section" id="sportsSection">
+            <!-- Sports cards will be dynamically added here -->
+        </div>
+    </div>
+
+    <script>
+        const sportsData = [
+            {
+                name: "Football",
+                description: "Experience the thrill of football on our state-of-the-art field.",
+                image: "Foot.png"
+            },
+            {
+                name: "Basketball",
+                description: "Shoot hoops and enjoy basketball in our indoor court.",
+                image: "Basket.png"
+            },
+            {
+                name: "Tennis",
+                description: "Play tennis on our well-maintained courts.",
+                image: "Tennis.png"
+            },
+            {
+                name: "Cricket",
+                description: "Join cricket matches on our expansive ground.",
+                image: "Cricket.png"
+            },
+            {
+                name: "Badminton",
+                description: "Enjoy playing badminton in our indoor courts.",
+                image: "Badminton.png"
+            },
+            {
+                name: "Volleyball",
+                description: "Enjoy exciting volleyball matches on our sandy court.",
+                image: "Volleyball.png"
+            }
+        ];
+
+        const sportsSection = document.getElementById('sportsSection');
+
+        sportsData.forEach(sport => {
+            const card = document.createElement('div');
+            card.className = 'sport-card';
+
+            card.innerHTML = `
+                <img src="${sport.image}" alt="${sport.name}">
+                <div class="content">
+                    <h3>${sport.name}</h3>
+                    <p>${sport.description}</p>
+                    <button onclick="alert('More details about ${sport.name}')">Learn More</button>
+                </div>
+            `;
+
+            sportsSection.appendChild(card);
+        });
+    </script>
+</body>
+
+</html>

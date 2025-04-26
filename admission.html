@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admissions - Amrita Nagercoil Campus</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #fff, #ffe0ef);
+            color: #333;
+            min-height: 100vh;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background: linear-gradient(to right, #b10f56, #ff6699);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            animation: fadeDown 1s ease;
+        }
+
+        @keyframes fadeDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        nav {
+            background-color: #b10f56;
+            padding: 1rem 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffccf2;
+            transform: scale(1.1);
+        }
+
+        .container {
+            padding: 3rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(177, 15, 86, 0.3);
+        }
+
+        h2 {
+            color: #b10f56;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        p {
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        input,
+        select,
+        textarea {
+            padding: 0.8rem 1rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #b10f56;
+        }
+
+        button {
+            padding: 1rem;
+            background: linear-gradient(45deg, #b10f56, #ff6699);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        button::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 10%, transparent 10.01%);
+            background-size: 10% 10%;
+            animation: blink 1.5s infinite linear;
+        }
+
+        @keyframes blink {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        button:hover {
+            background: linear-gradient(45deg, #ff6699, #b10f56);
+            transform: scale(1.05);
+        }
+
+        .reviews {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .review-card {
+            background: #ffe0ef;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .review-card h4 {
+            margin-bottom: 0.8rem;
+            color: #b10f56;
+        }
+
+        .review-card p {
+            font-size: 0.95rem;
+        }
+
+        footer {
+            background: #b10f56;
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+
+        /* Popup */
+        #popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+        }
+
+        #popup div {
+            background: #fff;
+            padding: 2rem 3rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            color: #b10f56;
+            animation: popIn 0.5s ease;
+        }
+
+        @keyframes popIn {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Admissions - Amrita Nagercoil Campus</h1>
+    </header>
+
+    <nav>
+        <a href="Main Page.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="admission.html">Admissions</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="container">
+
+        <section class="card">
+            <h2>Enroll Now</h2>
+            <p>Join one of the best institutions in India! Fill out the form below to apply for the Amrita Vishwa
+                Vidyapeetham, Nagercoil Campus.</p>
+
+            <form id="enroll-form">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="tel" placeholder="Phone Number" required>
+                <select required>
+                    <option value="">Select Program</option>
+                    <option value="btech">B.Tech</option>
+                    <option value="mtech">M.Tech</option>
+                    <option value="mba">MBA</option>
+                    <option value="phd">Ph.D</option>
+                </select>
+                <textarea rows="4" placeholder="Why do you want to join Amrita? (Optional)"></textarea>
+                <button type="submit">Submit Application</button>
+            </form>
+        </section>
+
+        <section class="card">
+            <h2>About Amrita Nagercoil Campus</h2>
+            <p>Amrita Vishwa Vidyapeetham, Nagercoil Campus is a leading academic institution offering top-quality
+                education in engineering, management, and research. Known for its serene environment, experienced
+                faculty, and excellent infrastructure, Amrita ensures holistic development of students.</p>
+            <p><strong>Highlights:</strong></p>
+            <ul style="margin-top: 1rem; line-height: 1.7;">
+                <li>✅ NAAC A++ Accredited</li>
+                <li>✅ 100% Placement Assistance</li>
+                <li>✅ Global Exchange Programs</li>
+                <li>✅ Industry Collaboration and Internships</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>Student Reviews</h2>
+            <div class="reviews">
+                <div class="review-card">
+                    <h4>⭐️⭐️⭐️⭐️⭐️ - Anjali R.</h4>
+                    <p>"Beautiful campus with friendly faculty. Loved my 4 years at Amrita Nagercoil!"</p>
+                </div>
+                <div class="review-card">
+                    <h4>⭐️⭐️⭐️⭐️⭐️ - Rahul S.</h4>
+                    <p>"Top-notch labs, excellent placements, and great memories! Highly recommend for B.Tech."</p>
+                </div>
+                <div class="review-card">
+                    <h4>⭐️⭐️⭐️⭐️⭐️ - Meera K.</h4>
+                    <p>"The atmosphere is very peaceful, and the college encourages research and innovation."</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Success Popup -->
+        <div id="popup">
+            <div>
+                <h2>🎉 Application Submitted!</h2>
+                <p>Thank you for enrolling.<br>We will contact you soon!</p>
+                <a href="thankyou.html"
+                    style="display:inline-block; margin-top:1rem; background:#b10f56; color:white; padding:0.8rem 1.5rem; border-radius:30px; text-decoration:none; font-weight:bold;">Go
+                    to Thank You Page</a>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Amrita Vishwa Vidyapeetham, Nagercoil Campus. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const form = document.getElementById('enroll-form');
+        const popup = document.getElementById('popup');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            popup.style.display = 'flex';
+        });
+    </script>
+
+</body>
+
+</html>

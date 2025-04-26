@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amrita Campus - About</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #fff, #ffe0ef);
+            color: #333;
+            min-height: 100vh;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background: linear-gradient(to right, #b10f56, #ff6699);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            animation: fadeDown 1s ease-in-out;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        @keyframes fadeDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        header h1 {
+            font-size: 3rem;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            background-color: #b10f56;
+            padding: 1rem 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            color: #ffccf2;
+            transform: scale(1.1);
+        }
+
+        .container {
+            padding: 3rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            animation: fadeIn 1.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(177, 15, 86, 0.3);
+        }
+
+        h2 {
+            color: #b10f56;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .card p {
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .card a.button {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.8rem 1.5rem;
+            background: #b10f56;
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.4s ease, transform 0.3s ease;
+        }
+
+        .card a.button:hover {
+            background: #ff6699;
+            color: #fff;
+            transform: scale(1.05);
+        }
+
+        footer {
+            background: #b10f56;
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        #back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #b10f56;
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: none;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease;
+            animation: float 3s infinite ease-in-out;
+        }
+
+        #back-to-top:hover {
+            background: #ff6699;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+
+            nav a {
+                margin: 0 1rem;
+                font-size: 1rem;
+            }
+
+            .container {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to Amrita Campus</h1>
+    </header>
+
+    <nav>
+        <a href="Main Page.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="admission.html">Admissions</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="container">
+        <section class="card">
+            <h2>Admissions</h2>
+            <p>Amrita Campus offers a wide range of undergraduate, postgraduate, and doctoral programs. Admissions are
+                open for the academic year. Visit our Admissions Page for more details.</p>
+            <a href="admission.html" class="button">Apply Now</a>
+        </section>
+
+        <section class="card">
+            <h2>Contact Information</h2>
+            <p><strong>Address:</strong> Amrita Vishwa Vidyapeetham, Amritapuri Campus, Clappana P.O., Kollam, Kerala,
+                India - 690525</p>
+            <p><strong>Phone:</strong> +91-476-280-1280</p>
+            <p><strong>Email:</strong> <a href="mailto:info@amrita.edu"
+                    style="color: #b10f56; text-decoration: underline;">info@amrita.edu</a></p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Amrita Vishwa Vidyapeetham. All rights reserved.</p>
+    </footer>
+
+    <button id="back-to-top" title="Back to Top">↑</button>
+
+    <script>
+        const backToTopButton = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+
+</html>
